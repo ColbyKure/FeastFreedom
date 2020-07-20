@@ -17,10 +17,16 @@
                     </a>
                 </li>
                 <li class="nav-item" *ngIf="!isDocumentation()">
-                    <a [routerLink]="['/signup']" class="nav-link"><i class="nc-icon nc-book-bookmark"></i>Create Account</a>
+                    <a [routerLink]="['/about']" class="nav-link">About</a>
+                </li>
+                <li class="nav-item" *ngIf="!isDocumentation()">
+                    <a [routerLink]="['/signup']" class="nav-link">Kitchens</a>
+                </li>
+                <li class="nav-item" *ngIf="!isDocumentation()">
+                    <a [routerLink]="['/signup']" class="nav-link">Create Account</a>
                 </li>
                 <li class="nav-item" *ngIf="isHome()">
-                    <a href="#" target="_blank" class="btn btn-danger btn-round">Log In</a>
+                    <a [routerLink]="['/login']" class="btn btn-danger btn-round">Log In</a>
                 </li>
                 <li class="nav-item" *ngIf="!isHome()">
                     <a href="#" target="_blank" class="btn btn-danger btn-round">Log In</a>
@@ -32,3 +38,4 @@
         </div>
     </div>
 </nav>
+

@@ -1,5 +1,7 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { CookieService } from 'ngx-cookie-service';
+
 
 @Component({
     selector: 'app-navbar',
@@ -9,6 +11,7 @@ import { Location, LocationStrategy, PathLocationStrategy } from '@angular/commo
 export class NavbarComponent implements OnInit {
     private toggleButton: any;
     private sidebarVisible: boolean;
+    private loggedIn : boolean;
 
     constructor(public location: Location, private element : ElementRef) {
         this.sidebarVisible = false;

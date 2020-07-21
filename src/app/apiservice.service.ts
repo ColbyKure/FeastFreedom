@@ -51,7 +51,13 @@ export class ApiserviceService {
   }
 
   // authController functions
-  signupUser() {}
-  authenticateToken() {}
-  authorizeUser() {}
+  signupUser(user:any) {
+    return this.http.post(this.rootURL + '/auth/signup', user); 
+  }
+  authenticateToken(token:String) {
+    return this.http.get(this.rootURL + '/auth/authenticate/' + token); 
+  }
+  authorizeUser(email:String, password:String) {
+    return this.http.get(this.rootURL + '/auth/authenticate?email=' + email + '&password=' + password); 
+  }
 }

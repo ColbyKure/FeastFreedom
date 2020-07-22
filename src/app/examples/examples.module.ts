@@ -8,6 +8,11 @@ import { ProfileComponent } from './profile/profile.component';
 import { SignupComponent } from './signup/signup.component';
 import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './login/login.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { SignupkitchenComponent } from './signupkitchen/signupkitchen.component';
+import { KitchensComponent } from './kitchens/kitchens.component';
+import { ItemsComponent } from './items/items.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
     imports: [
@@ -20,7 +25,12 @@ import { LoginComponent } from './login/login.component';
         SignupComponent,
         ProfileComponent,
         AboutComponent,
-        LoginComponent
+        LoginComponent,
+        HomepageComponent,
+        SignupkitchenComponent,
+        KitchensComponent,
+        ItemsComponent,
+        CartComponent
     ]
 })
 export class ExamplesModule { }

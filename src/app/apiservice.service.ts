@@ -1,5 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse  } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
+import { User } from './models/user';
+import { Kitchen } from './models/kitchen';
 
 @Injectable({
   providedIn: 'root'
@@ -11,53 +15,72 @@ export class ApiserviceService {
   rootURL = 'http://localhost:2000/api';
 
   // userController functions
-  getUser() { 
-    return this.http.get(this.rootURL + '/users'); 
+  getUser(): Observable<User[]> { 
+    return this.http.get<User[]>(this.rootURL + '/users')
+    .pipe(catchError(this.errorHandler));
   }
-  postUser(user:any) { 
-    return this.http.post(this.rootURL + '/users', user); 
+  postUser(user:any): Observable<User[]> { 
+    return this.http.post<User[]>(this.rootURL + '/users', user)
+    .pipe(catchError(this.errorHandler));
   }
-  putUser(user:any) { 
-    return this.http.put(this.rootURL + '/users/' + user._id, user); 
+  putUser(user:any): Observable<User[]> { 
+    return this.http.put<User[]>(this.rootURL + '/users/' + user._id, user)
+    .pipe(catchError(this.errorHandler));
   }
-  deleteUser(userid:String) {
-    return this.http.delete(this.rootURL + '/users/' + userid); 
+  deleteUser(userid:String): Observable<User[]> {
+    return this.http.delete<User[]>(this.rootURL + '/users/' + userid)
+    .pipe(catchError(this.errorHandler));
   }
-  getUserByID(userid:String) {
-    return this.http.get(this.rootURL + '/users/' + userid); 
+  getUserByID(userid:String): Observable<User[]> {
+    return this.http.get<User[]>(this.rootURL + '/users/' + userid)
+    .pipe(catchError(this.errorHandler));
   }
-  getUserByEmail(email:String) {
-    return this.http.get(this.rootURL + '/users/email/' + email); 
+  getUserByEmail(email:String): Observable<User[]> {
+    return this.http.get<User[]>(this.rootURL + '/users/email/' + email)
+    .pipe(catchError(this.errorHandler));
   }
 
   // kitchenController functions
-  getKitchen() { 
-    return this.http.get(this.rootURL + '/kitchens'); 
+  getKitchen(): Observable<Kitchen[]> { 
+    return this.http.get<Kitchen[]>(this.rootURL + '/kitchens')
+    .pipe(catchError(this.errorHandler));
   }
-  postKitchen(kitchen:any) { 
-    return this.http.post(this.rootURL + '/kitchens', kitchen); 
+  postKitchen(kitchen:any): Observable<Kitchen[]> { 
+    return this.http.post<Kitchen[]>(this.rootURL + '/kitchens', kitchen)
+    .pipe(catchError(this.errorHandler));
   }
-  putKitchen(kitchen:any) { 
-    return this.http.put(this.rootURL + '/kitchens/' + kitchen._id, kitchen); 
+  putKitchen(kitchen:any): Observable<Kitchen[]> { 
+    return this.http.put<Kitchen[]>(this.rootURL + '/kitchens/' + kitchen._id, kitchen)
+    .pipe(catchError(this.errorHandler));
   }
-  deleteKitchen(kitchenid:String) {
-    return this.http.delete(this.rootURL + '/kitchens/' + kitchenid); 
+  deleteKitchen(kitchenid:String): Observable<Kitchen[]> {
+    return this.http.delete<Kitchen[]>(this.rootURL + '/kitchens/' + kitchenid)
+    .pipe(catchError(this.errorHandler));
   }
-  getKitchenByID(kitchenid:String) {
-    return this.http.get(this.rootURL + '/kitchens/' + kitchenid); 
+  getKitchenByID(kitchenid:String): Observable<Kitchen[]> {
+    return this.http.get<Kitchen[]>(this.rootURL + '/kitchens/' + kitchenid)
+    .pipe(catchError(this.errorHandler));
   }
-  getKitchenByEmail(email:String) {
-    return this.http.get(this.rootURL + '/kitchens/email/' + email); 
+  getKitchenByEmail(email:String): Observable<Kitchen[]> {
+    return this.http.get<Kitchen[]>(this.rootURL + '/kitchens/email/' + email)
+    .pipe(catchError(this.errorHandler));
   }
 
   // authController functions
-  signupUser(user:any) {
-    return this.http.post(this.rootURL + '/auth/signup', user); 
+  signupUser(user:any): Observable<User[]> {
+    return this.http.post<User[]>(this.rootURL + '/auth/signup', user)
+    .pipe(catchError(this.errorHandler));
   }
-  authenticateToken(token:String) {
-    return this.http.get(this.rootURL + '/auth/authenticate/' + token); 
+  authenticateToken(token:String): Observable<User[]> {
+    return this.http.get<User[]>(this.rootURL + '/auth/authenticate/' + token)
+    .pipe(catchError(this.errorHandler));
   }
-  authorizeUser(email:String, password:String) {
-    return this.http.get(this.rootURL + '/auth/authenticate?email=' + email + '&password=' + password); 
+  authorizeUser(email:String, password:String): Observable<User[]> {
+    return this.http.get<User[]>(this.rootURL + '/auth/authenticate?email=' + email + '&password=' + password)
+    .pipe(catchError(this.errorHandler));
+  }
+
+  errorHandler(error: HttpErrorResponse){
+    return throwError(error.message || "Server Error");
   }
 }

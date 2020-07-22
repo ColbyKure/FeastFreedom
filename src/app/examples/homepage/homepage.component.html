@@ -1,0 +1,162 @@
+<style>
+
+.circular--landscape {
+        display: inline-block;
+        position: relative;
+        width: 210px;
+        height: 210px;
+        overflow: hidden;
+        border-radius: 50%;
+        margin: 5px; 
+      }
+      .circular--landscape img {
+          width: auto;
+          height: 100%;
+          margin-left: -50px;
+      }
+
+      .circular--portrait {
+        position: relative; 
+        width: 210px;
+        height: 210px;
+        overflow: hidden;
+        border-radius: 50%;
+        margin: 5px; 
+    }
+    .circular--portrait img {
+         width: 100%;
+         height: auto;
+        }
+
+    .circular--landscape p {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            bottom: 0;
+            left: 0;
+            font-size: 25px;
+            font-weight: bold;
+            color:rgb(8, 62, 87);
+            margin-bottom: 15px;
+        }
+
+    .circular--portrait p {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            bottom: 0;
+            left: 0;
+            font-size:25px;
+            font-weight: bold;
+            color:rgb(8, 62, 87);
+            margin-bottom: 15px;
+        }
+
+</style>
+<div class="wrapper">
+    <div class="page-header section-dark" style="background-image: url('assets/img/antoine-barres.jpg')">
+        <div class="filter"></div>
+        <div class="content-center">
+            <div class="container">
+                <div class="title-brand">
+                    <h1 class="presentation-title">Feast Freedom</h1>
+                    <div class="fog-low">
+                        <img src="assets/img/fog-low.png" alt="">
+                    </div>
+                    <div class="fog-low right">
+                        <img src="assets/img/fog-low.png" alt="">
+                    </div>
+                </div>
+
+                <h2 class="presentation-subtitle text-center">Angular Web Application Developed by Team 3</h2>
+            </div>
+        </div>
+        <div class="moving-clouds" style="background-image: url('assets/img/clouds.png'); "></div>
+    </div>
+    <div class="main">
+        <div class="section">
+            <div class="container">
+              <div class="tim-title">
+                  <h3>Search by Category</h3>
+              </div>
+              <div class="row">
+              <div class="circular--landscape">
+                  <img src="./assets/img/asian.jpg" />
+                  <p>Asian</p>
+              </div>
+              
+              <div class="circular--landscape">
+                  <img src="./assets/img/pizza.png" />
+                  <p>Pizza</p>
+              </div>
+              <div class="circular--landscape">
+                  <img src="./assets/img/mexican.jpg" />
+                  <p>Mexican</p>
+              </div>
+              <div class="circular--landscape">
+                  <img src="./assets/img/indian.jpg" />
+                  <p>Indian</p>
+              </div>
+              <div class="circular--landscape">
+                  <img src="./assets/img/italian.jpg" />
+                  <p>Italian</p>
+              </div>
+              <div class="circular--landscape">
+                  <img src="./assets/img/FastFood.jpg" />
+                  <p>Fast Food</p>
+              </div>
+              <div class="circular--landscape">
+                  <img src="./assets/img/thai.jpg" />
+                  <p>Thai</p>
+              </div>
+              <div class="circular--landscape">
+                  <img src="./assets/img/sushi.jpg" />
+                      <p>Sushi</p>     
+              </div>
+              <div class="circular--landscape">
+                  <img src="./assets/img/seafood.jpg" />
+                  <p>Seafood</p>
+              </div>
+              
+              <div class="circular--portrait">
+                  <img src="./assets/img/dessert.jpg" />
+                  <p>Desserts</p>
+              </div>
+          </div>
+        <div class="section" id="carousel">
+            <div class="container">
+                <div class="tim-title">
+                    <h3></h3>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 mr-auto ml-auto">
+                        <div class="card page-carousel">
+                            <ngb-carousel>
+                                <ng-template ngbSlide>
+                                    <img src="./assets/img/soroush-karimi.jpg" alt="Random first slide">
+                                    <div class="carousel-caption">
+                                        <p class="text-info">Healthy Options</p>
+                                    </div>
+                                </ng-template>
+                                <ng-template ngbSlide>
+                                    <img src="./assets/img/federico-beccari.jpg" alt="Random second slide">
+                                    <div class="carousel-caption">
+                                        <p class="text-info">Menu for the Little Ones</p>
+                                    </div>
+                                </ng-template>
+                                <ng-template ngbSlide>
+                                    <img src="./assets/img/joshua-stannard.jpg" alt="Random third slide">
+                                    <div class="carousel-caption">
+                                        <p class="text-info">Deliver Everywhere</p>
+                                    </div>
+                                </ng-template>
+                            </ngb-carousel>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+

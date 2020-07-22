@@ -75,8 +75,8 @@ export class ApiserviceService {
     return this.http.get<User[]>(this.rootURL + '/auth/authenticate/' + token)
     .pipe(catchError(this.errorHandler));
   }
-  authorizeUser(email:String, password:String): Observable<User[]> {
-    return this.http.get<User[]>(this.rootURL + '/auth/authenticate?email=' + email + '&password=' + password)
+  authorizeUser(user:any): Observable<User[]> {
+    return this.http.post<User[]>(this.rootURL + '/auth/authorize', user)
     .pipe(catchError(this.errorHandler));
   }
 

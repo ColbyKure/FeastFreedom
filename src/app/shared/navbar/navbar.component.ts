@@ -11,10 +11,14 @@ import { CookieService } from 'ngx-cookie-service';
 export class NavbarComponent implements OnInit {
     private toggleButton: any;
     private sidebarVisible: boolean;
-    private loggedIn : boolean;
+    private loggedIn : boolean; //
+    private typeUser : boolean; // true = Regular User ; false =  Kitchen
+    private userName : string;
 
     constructor(public location: Location, private element : ElementRef) {
         this.sidebarVisible = false;
+        this. loggedIn =  false;
+        this.typeUser = false;
     }
 
     ngOnInit() {
@@ -50,27 +54,28 @@ export class NavbarComponent implements OnInit {
             this.sidebarClose();
         }
     };
-    isHome() {
-      var titlee = this.location.prepareExternalUrl(this.location.path());
-      if(titlee.charAt(0) === '#'){
-          titlee = titlee.slice( 1 );
-      }
-        if( titlee === '/home' ) {
+    
+    isRegularUser(){
+
+        if(this.typeUser){
+
             return true;
-        }
-        else {
+
+        }else{
+
             return false;
+
         }
     }
-    isDocumentation() {
-      var titlee = this.location.prepareExternalUrl(this.location.path());
-      if(titlee.charAt(0) === '#'){
-          titlee = titlee.slice( 1 );
-      }
-        if( titlee === '/documentation' ) {
+
+    isLoggedIn(){
+
+        if(this.loggedIn){
+
             return true;
-        }
-        else {
+
+        }else{
+
             return false;
         }
     }

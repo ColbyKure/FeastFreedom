@@ -10,16 +10,26 @@ import { LandingComponent } from './examples/landing/landing.component';
 import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.component';
 import { AboutComponent } from './examples/about/about.component';
 import { LoginComponent } from './examples/login/login.component';
+import { HomepageComponent} from './examples/homepage/homepage.component';
+import { KitchenComponent } from './examples/kitchen/kitchen.component';
+import { ItemsComponent } from './examples/items/items.component';
+import { SignupkitchenComponent } from './examples/signupkitchen/signupkitchen.component';
+import { CartComponent } from './examples/cart/cart.component';
 
 const routes: Routes =[
-    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: '', redirectTo: 'homepage', pathMatch: 'full' },
     { path: 'home',             component: ComponentsComponent },
     { path: 'user-profile',     component: ProfileComponent },
     { path: 'signup',           component: SignupComponent },
     { path: 'landing',          component: LandingComponent },
     { path: 'nucleoicons',      component: NucleoiconsComponent },
     { path: 'about',      component: AboutComponent },
-    { path: 'login',      component: LoginComponent }
+    { path: 'login',      component: LoginComponent },
+    { path: 'homepage',      component: HomepageComponent },
+    { path: 'kitchen',      component: KitchenComponent },
+    { path: 'items',      component: ItemsComponent },
+    { path: 'signupkitchen',      component: SignupkitchenComponent },
+    { path: 'cart',      component: CartComponent }
 ];
 
 @NgModule({

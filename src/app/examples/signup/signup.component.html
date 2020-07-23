@@ -17,7 +17,7 @@
                                   <i class="fa fa-twitter"></i>
                               </a>
                           </div>
-                          <form class="register-form">
+                          <form class="register-form" (ngSubmit)="onSubmit()">
                               <label>Email</label>
                               <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
                                 <div class="input-group-prepend">
@@ -86,7 +86,7 @@
 
                               </div>
 
-                              <button class="btn btn-danger btn-block btn-round">Register</button>
+                              <button class="btn btn-danger btn-block btn-round" type="submit">Register</button>
                           </form>
                       </div>
                     </div>

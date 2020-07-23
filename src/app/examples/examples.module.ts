@@ -13,6 +13,7 @@ import { SignupkitchenComponent } from './signupkitchen/signupkitchen.component'
 import { KitchensComponent } from './kitchens/kitchens.component';
 import { ItemsComponent } from './items/items.component';
 import { CartComponent } from './cart/cart.component';
+import { SignupuserComponent } from './signupuser/signupuser.component';
 
 @NgModule({
     imports: [
@@ -30,7 +31,8 @@ import { CartComponent } from './cart/cart.component';
         SignupkitchenComponent,
         KitchensComponent,
         ItemsComponent,
-        CartComponent
+        CartComponent,
+        SignupuserComponent
     ]
 })
 export class ExamplesModule { }

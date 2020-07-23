@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { error } from 'console';
 
 @Component({
     selector: 'app-signup',
@@ -54,7 +56,17 @@ export class SignupComponent implements OnInit {
 
     }
 
-    constructor() { }
+    onSubmit(){
+
+        if(this.kitchen() == true){
+            this.router.navigate(['/signupkitchen']);
+        }
+        else if(this.regularUser() == true){
+        this.router.navigate(['/signupuser']);
+        }
+    }
+
+    constructor(private router: Router) { }
 
     ngOnInit() {}
 }

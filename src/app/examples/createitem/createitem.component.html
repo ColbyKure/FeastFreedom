@@ -1,0 +1,95 @@
+<style>
+    .card-register {
+        background-color: rgba(51, 50, 49, 0.644);
+    /* background: rgba(209, 103, 71, 0.671); */
+  /* background-color: #FF8F5E; */
+  width: 250%;
+  border-radius: 8px;
+  color: #fff;
+  max-width: 700px;
+  min-height: 400px;
+  /* padding-left: 50px; */
+  z-index: 1;
+} 
+</style>
+<div class="wrapper">
+    <div class="page-header" style="background-color: rgba(209, 103, 71, 0.671)">
+            <div class="container" >
+                <div class="row" style="padding-top: 50px; padding-left: 200px;">
+                    <div class="col-lg-4 col-sm-6 mr-auto">
+                      <div class="card card-register" >
+                          <h3 class="title" style="font-size: xx-large; font-weight: 500; color: whitesmoke;">Add Item to the Menu</h3>
+                          <form class="register-form" (ngSubmit)="onSubmit()">
+                              <label>Item Name</label>
+                              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                      <i class="nc-icon nc-minimal-right"></i>
+                                  </span>
+                                </div>
+
+                                  <input type="text" class="form-control" placeholder="Kitchen Type" (focus)="focus=true" (blur)="focus=false" id="email" required="true" >
+                              </div>
+
+                              <div ngbDropdown class="d-inline-block dropdown">
+                                <label id="dropdownBasic1" ngbDropdownToggle>Food Category</label>
+                                <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="dropdown-primary">
+                                  <a (click)="typeSelected(1)" class="dropdown-item"> Vegetarian</a>
+                                  <a (click)="typeSelected(2)" class="dropdown-item"> Non-Vegetarian</a>
+                                    <!-- <a (click)="typeSelected(1)" class="dropdown-item">Vegetarian</a>
+                                    <a (click)="typeSelected(2)" class="dropdown-item">Non-Vegetarian</a> -->
+                                </div>
+                              </div>
+
+                              <br>
+                              <label>Description</label>
+                              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                      <i></i>
+                                  </span>
+                                </div>
+
+                                  <input type="text" class="form-control" placeholder="hh:mm AM/PM" (focus)="focus=true" (blur)="focus=false" id="email" required="true" >
+                              </div>
+
+                              <label>Price</label>
+                              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+
+                                  <input type="text" class="form-control" placeholder="$" (focus)="focus=true" (blur)="focus=false" id="email" required="true" >
+                              </div>
+
+
+                              <label>Image Upload</label>
+                              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus1===true}">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                      <i class="nc-icon nc-image"></i>
+                                  </span>
+                                </div>
+                                  <input type="text" class="form-control" placeholder="Upload Image" (focus)="focus1=true" (blur)="focus1=false" id="confirmPassword" required="true" >
+                              </div>
+
+                              <div class="file-field md-form">
+                                <div mdbBtn floating="true" size="md" gradient="purple" mdbWavesEffect>
+                                  <mdb-icon fas icon="cloud-upload-alt" aria-hidden="true"></mdb-icon>
+                                  <input type="file" mdbFileSelect (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput">
+                                </div>
+                              <div class="file-path-wrapper mt-3">
+                                <input class="file-path" type="text" placeholder="Upload your file" [value]="showFiles()">
+                              </div>
+                            </div>
+                            <button mdbBtn type="button" gradient="purple" class="waves-light" (click)="startUpload()" mdbWavesEffect>Start uploading</button>
+
+                              <button class="btn btn-danger btn-block btn-round" type="submit">Register Kitchen</button>
+                          </form>
+                      </div>
+                    </div>
+                </div>
+                <div class="footer register-footer text-center">
+                    <h6>&copy;{{test | date: 'yyyy'}} made with <i class="fa fa-heart heart"></i> by Team 3</h6>
+                </div>
+            </div>
+    </div>
+</div>
+

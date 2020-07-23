@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 //import { FormArray, Validators } from '@angular/forms';
 //import { ApiServiceService } from '../../apiservice.service';
-//import { Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signupkitchen',
@@ -11,9 +11,9 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class SignupkitchenComponent implements OnInit {
 
-  public kitchenForm;
+  // public kitchenForm;
   
-  constructor(private fb: FormBuilder) {
+  constructor(private router: Router) {
     
    }
 
@@ -31,6 +31,12 @@ export class SignupkitchenComponent implements OnInit {
   //  });
       //});
     }
+
+    onSubmit(){
+
+          this.router.navigate(['/createitem']);
+
+  }
 
     
 

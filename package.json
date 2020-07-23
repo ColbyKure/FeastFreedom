@@ -31,6 +31,7 @@
     "core-js": "3.6.4",
     "jquery": "^3.5.1",
     "jw-bootstrap-switch-ng2": "2.0.1",
+    "md-form-builder": "^0.14.7",
     "ng2-nouislider": "1.7.12",
     "ngx-cookie-service": "^3.0.4",
     "nouislider": "9.2.0",

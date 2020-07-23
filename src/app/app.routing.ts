@@ -15,6 +15,7 @@ import { KitchenComponent } from './examples/kitchen/kitchen.component';
 import { ItemsComponent } from './examples/items/items.component';
 import { SignupkitchenComponent } from './examples/signupkitchen/signupkitchen.component';
 import { SignupuserComponent } from './examples/signupuser/signupuser.component';
+import { CreateitemComponent } from './examples/createitem/createitem.component';
 import { CartComponent } from './examples/cart/cart.component';
 
 const routes: Routes =[
@@ -31,6 +32,7 @@ const routes: Routes =[
     { path: 'items',      component: ItemsComponent },
     { path: 'signupkitchen',      component: SignupkitchenComponent },
     { path: 'signupuser',      component: SignupuserComponent },
+    { path: 'createitem',      component: CreateitemComponent },
     { path: 'cart',      component: CartComponent }
 ];
 

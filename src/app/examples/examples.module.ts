@@ -14,6 +14,7 @@ import { KitchensComponent } from './kitchens/kitchens.component';
 import { ItemsComponent } from './items/items.component';
 import { CartComponent } from './cart/cart.component';
 import { SignupuserComponent } from './signupuser/signupuser.component';
+import { CreateitemComponent } from './createitem/createitem.component';
 
 @NgModule({
     imports: [
@@ -32,7 +33,8 @@ import { SignupuserComponent } from './signupuser/signupuser.component';
         KitchensComponent,
         ItemsComponent,
         CartComponent,
-        SignupuserComponent
+        SignupuserComponent,
+        CreateitemComponent
     ]
 })
 export class ExamplesModule { }

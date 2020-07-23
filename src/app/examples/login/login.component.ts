@@ -97,6 +97,7 @@ export class LoginComponent implements OnInit {
     console.log(this.errMsg);
     this.printUserLocalStorage();
 
+    
     if(this.isKitchen === null) {
       console.log('user not logged in.')
       console.log(this.isKitchen)

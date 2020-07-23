@@ -4,6 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { User } from './models/user';
 import { Kitchen } from './models/kitchen';
+import { Item } from './models/item';
 
 @Injectable({
   providedIn: 'root'
@@ -65,6 +66,22 @@ export class ApiserviceService {
     return this.http.get<Kitchen[]>(this.rootURL + '/kitchens/email/' + email)
     .pipe(catchError(this.errorHandler));
   }
+  addItem(kitchen:any): Observable<Kitchen[]> {
+    return this.http.put<Kitchen[]>(this.rootURL + '/kitchens/'+ kitchen._id, kitchen)
+    .pipe(catchError(this.errorHandler));
+  }
+  deleteItem(itemid:String):Observable<Item[]> {
+    return this.http.delete<Item[]>(this.rootURL + '/items/' + itemid)
+    .pipe(catchError(this.errorHandler));
+  }
+  getItemByID(itemid:String): Observable<Item[]> {
+    return this.http.get<Item[]>(this.rootURL + '/items/' + itemid)
+    .pipe(catchError(this.errorHandler));
+  }
+  putItem(item:any): Observable<Item[]> { 
+    return this.http.put<Item[]>(this.rootURL + '/items/' + item._id, item)
+    .pipe(catchError(this.errorHandler));
+  }
 
   // authController functions
   signupUser(user:any): Observable<User[]> {
@@ -84,6 +101,9 @@ export class ApiserviceService {
     return this.http.post<Kitchen[]>(this.rootURL + '/kitchens/authorize', kitchen)
     .pipe(catchError(this.errorHandler));
   }
+
+
+
 
   errorHandler(error: HttpErrorResponse){
     return throwError(error.message || "Server Error");

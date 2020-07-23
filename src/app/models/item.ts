@@ -1,9 +1,9 @@
-import { Product } from './product';
-
 export class Item {
-
-    product: Product;
-    quantity: number;
-
+    public _id:any;
+    public ItemName:String;
+    public Price:Number;
+    public ItemCatagory:Number;
+    public ImagePath:String;
+    public ItemDescription:String;
 }
 

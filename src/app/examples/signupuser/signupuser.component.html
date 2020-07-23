@@ -1,0 +1,62 @@
+<style>
+    .card-register {
+    /* background: rgba(209, 103, 71, 0.671); */
+  background-color: #FF8F5E;
+  width: 250%;
+  border-radius: 8px;
+  color: #fff;
+  max-width: 650px;
+  min-height: 400px;
+  /* padding-left: 50px; */
+  z-index: 1;
+} 
+</style>
+<div class="wrapper">
+    <div class="page-header" style="background-image: url('./assets/img/kitchen2.jpg');">
+            <div class="container" >
+                <div class="row" style="padding-top: 50px; padding-left: 250px;">
+                    <div class="col-lg-4 col-sm-6 mr-auto">
+                      <div class="card card-register" >
+                          <h3 class="title" style="font-size: xx-large; font-weight: 500; color: whitesmoke;">Security Questions</h3>
+                          <form class="register-form">
+                              <label>Security Question 1(Select from the Options)</label>
+                              <br>
+                              <select name="select">
+                                  <option selected="selected">Question Set 1: Select one</option>
+                                  <option>Question 1?</option>
+                                  <option>Question 2?</option>
+                                  <option>Question 3?</option>
+                                  <option>Question 4?</option>
+                                  <option>Question 5? (Assume user selects this question in set 1)</option>
+                                </select>
+                                <br>
+                                <br>
+                                <input type="text" class="form-control" placeholder="Answer 1" (focus)="focus=true" (blur)="focus=false" id="email" required="true" >
+                                <label>Security Question 2(Select from the Options)</label>
+                                <br>
+                                <select name="select">
+                                    <option selected="selected">Question Set 1: Select one</option>
+                                    <option>Question 6?</option>
+                                    <option>Question 7?</option>
+                                    <option>Question 8?</option>
+                                    <option>Question 9?</option>
+                                    <option>Question 10?</option>
+                                  </select>
+                                <br>  
+                                <br>
+                                <input type="text" class="form-control" placeholder="Answer 1" (focus)="focus=true" (blur)="focus=false" id="" required="true" >
+                                <br>
+                              
+
+                              <button class="btn btn-danger btn-block btn-round">Register Now</button>
+                          </form>
+                      </div>
+                    </div>
+                </div>
+                <div class="footer register-footer text-center">
+                    <h6>&copy;{{test | date: 'yyyy'}} made with <i class="fa fa-heart heart"></i> by Team 3</h6>
+                </div>
+            </div>
+    </div>
+</div>
+

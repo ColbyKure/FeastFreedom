@@ -15,10 +15,26 @@ export class NavbarComponent implements OnInit {
     private typeUser : boolean; // true = Regular User ; false =  Kitchen
     private userName : string;
 
-    constructor(public location: Location, private element : ElementRef) {
+    constructor(public location: Location, private element : ElementRef, private cookieService: CookieService) {
         this.sidebarVisible = false;
-        this. loggedIn =  false;
-        this.typeUser = false;
+        if(localStorage.getItem('currUserID') != null){
+
+            this. loggedIn =  true;
+            if(localStorage.getItem('isUser') == "true"){
+
+                this.typeUser = true;
+
+            }else{
+
+                this.typeUser = false;
+
+            }
+
+        }else{
+
+            this.loggedIn = false;
+
+        }
     }
 
     ngOnInit() {

@@ -1,18 +1,41 @@
+<style>
+    .card-register {
+  background: rgba(209, 103, 71, 0.596);
+  width: 250%;
+  border-radius: 6px;
+  color: #fff;
+  max-width: 650px;
+  min-height: 400px;
+  z-index: 1;
+} 
+</style>
 <div class="wrapper">
     <div class="page-header" style="background-image: url('./assets/img/burger.jpg');">
         <div class="filter"></div>
-        <div class="container">
-            <div>
-                 <div class="col-lg-4 col-sm-6 ml-auto" style="text-decoration-color: white;">
-                  <div style="font-size: large; text-align: end; color:white"> 
-                      <h3>Feast Freedom gives you the freedom to get the food you love delivered at your doorstep.</h3>
-                  </div>
+            <div class="container" >
+                <div class="row" style="padding-top: 0px; padding-left: 250px;">
+                    <div class="col-lg-4 col-sm-6 mr-auto">
+                      <div class="card card-register" >
+                          <h3 class="title" style="font-size: large; font-weight: 500; color: whitesmoke;">About Us</h3>
+                          <p>Feast Freedom gives you the freedom to get the food you love delivered at your doorstep.</p>
+                          <br>
+                          <p>Feast Freedom is an Angular Web Application that has hundreds of restaurants to choose from. When you open the application, you can scroll through for inspiration or search for a particular restaurant or cuisine. When you find something you like, tap to add it to your cart to order. </p>
+                          <br>
+                          <p>
+                            Allows Kitchens to partner up with Feast Freedom and add kitchens to the platform, to help you reach those users with reliable delivery from delivery people using the Feast Freedom platform, a kitchen can satisfy customers with the food they want—when and where they want it.
+                          </p>
+                          <p>Created by Team 3 (Cathy Dai, Colby Kure, Dixita Dhami and Ricardo Gil).</p>
+                      </div>
+                      <div class="footer register-footer text-center">
+                        <h6>&copy;{{test }} 2020 made with <i class="fa fa-heart heart"></i> by Team 3</h6>
+                    </div>
+                    </div>
                 </div>
+               
             </div>
-        </div>
-    </div> 
-    <app-footer></app-footer>
+    </div>
 </div>
+
 
 
 

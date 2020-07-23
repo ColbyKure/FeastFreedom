@@ -16,6 +16,7 @@ import { ItemsComponent } from './examples/items/items.component';
 import { SignupkitchenComponent } from './examples/signupkitchen/signupkitchen.component';
 import { SignupuserComponent } from './examples/signupuser/signupuser.component';
 import { CartComponent } from './examples/cart/cart.component';
+import { ProductComponent } from './examples/product/product.component';
 
 const routes: Routes =[
     { path: '', redirectTo: 'homepage', pathMatch: 'full' },
@@ -31,6 +32,7 @@ const routes: Routes =[
     { path: 'items',      component: ItemsComponent },
     { path: 'signupkitchen',      component: SignupkitchenComponent },
     { path: 'signupuser',      component: SignupuserComponent },
+    { path: 'products', component: ProductComponent },
     { path: 'cart',      component: CartComponent }
 ];
 

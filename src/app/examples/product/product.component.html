@@ -1,0 +1,42 @@
+<div class="wrapper">
+    <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('assets/img/antoine-barres.jpg');">
+        <div class="filter"></div>
+        <div class="content-center">
+            <div class="container">
+                <div class="title-brand">
+                </div>
+            </div>
+          </div> 
+      </div>
+
+<div class="section">
+    <div class="container">
+        <div class="tim-title">
+            <h2>Menu</h2>
+        </div>
+    </div>
+</div>
+          
+<table align = "center">
+    <tr style = "text-align:center">
+        <th> </th>
+        <th style = "text-align:center">Name</th>
+        <th style = "text-align:center">Price</th>
+        <th style = "text-align:center">Description</th>
+        <th style = "text-align:center">Category</th>
+        <th style = "text-align:center">Buy</th>
+    </tr>
+    <tr *ngFor="let product of products">
+        <td align = center>
+            <img src={{product.Photo}} width="150">
+        </td>
+        <td style="font-weight:bold">{{product.Name}}</td>
+        <td style = "text-align:center">${{product.Price}} </td>
+        <td>{{product.Description}} </td>
+        <td style = "text-align:center">{{product.FoodCategory}}</td>
+        
+        <td>
+            <a [routerLink]="['/cart', { id:product.id }]">Add to Cart</a>
+        </td>
+    </tr>
+</table>

@@ -14,13 +14,18 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { ComponentsModule } from './components/components.module';
 import { ExamplesModule } from './examples/examples.module';
 import { CommonModule } from '@angular/common';
+import { CartComponent } from './examples/cart/cart.component';
+import { ProductComponent } from './examples/product/product.component';
+import { ProductService } from './services/product.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    CartComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +38,8 @@ import { CommonModule } from '@angular/common';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [ CookieService ],
+  providers: [ CookieService, 
+    ProductService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

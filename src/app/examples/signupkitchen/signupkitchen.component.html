@@ -18,7 +18,7 @@
                     <div class="col-lg-4 col-sm-6 mr-auto">
                       <div class="card card-register" >
                           <h3 class="title" style="font-size: xx-large; font-weight: 500; color: whitesmoke;">Kitchen Info</h3>
-                          <form class="register-form">
+                          <form class="register-form" (ngSubmit)="onSubmit()">
                               <label>Kitchen Type</label>
                               <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
                                 <div class="input-group-prepend">
@@ -121,7 +121,7 @@
                             </div>
                             <button mdbBtn type="button" gradient="purple" class="waves-light" (click)="startUpload()" mdbWavesEffect>Start uploading</button>
 
-                              <button class="btn btn-danger btn-block btn-round">Register Kitchen</button>
+                              <button class="btn btn-danger btn-block btn-round" type="submit">Register Kitchen</button>
                           </form>
                       </div>
                     </div>

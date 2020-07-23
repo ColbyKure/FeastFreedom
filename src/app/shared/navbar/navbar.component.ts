@@ -1,6 +1,7 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
-import { CookieService } from 'ngx-cookie-service';
+//import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,18 +16,19 @@ export class NavbarComponent implements OnInit {
     private typeUser : boolean; // true = Regular User ; false =  Kitchen
     private userName : string;
 
-    constructor(public location: Location, private element : ElementRef, private cookieService: CookieService) {
+    constructor(public location: Location, private element : ElementRef, private router:Router) {
         this.sidebarVisible = false;
+        this.loggedIn = false;
         if(localStorage.getItem('currUserID') != null){
+            this.userName = localStorage.getItem('currUserName');
+            this.loggedIn =  true;
+            if(localStorage.getItem('isKitchen') == "true"){
 
-            this. loggedIn =  true;
-            if(localStorage.getItem('isUser') == "true"){
-
-                this.typeUser = true;
+                this.typeUser = false;
 
             }else{
 
-                this.typeUser = false;
+                this.typeUser = true;
 
             }
 
@@ -94,5 +96,15 @@ export class NavbarComponent implements OnInit {
 
             return false;
         }
+    }
+
+    onLogout(){
+        localStorage.removeItem('currUserToken');
+        localStorage.removeItem('currUserName');
+        localStorage.removeItem('currUserID');
+        localStorage.removeItem('isKitchen');
+        localStorage.removeItem('errorLogin')
+        this.router.navigate(['/homepage']);
+        location.reload();
     }
 }

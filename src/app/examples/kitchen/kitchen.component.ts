@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Kitchen } from '../../models/kitchen';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-kitchen',
@@ -17,9 +18,18 @@ export class KitchenComponent implements OnInit {
   ];
   private selectedKitchen: Kitchen;
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
+    if (!localStorage.getItem('foo')) { 
+      localStorage.setItem('foo', 'no reload') 
+      location.reload() 
+    } else {
+      localStorage.removeItem('foo') 
+    }
+    if (localStorage.getItem('errorLogin')){
+      this.router.navigate(['/login']);
+    }
   }
 
   onSelect(kitchen: Kitchen): void{

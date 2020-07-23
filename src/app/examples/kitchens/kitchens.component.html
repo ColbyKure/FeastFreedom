@@ -1,24 +1,49 @@
 <div class="wrapper">
-    <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('./assets/img/food-options.jpg');">
+    <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('assets/img/antoine-barres.jpg');">
         <div class="filter"></div>
-    </div>
-    
-    <div class="section text-center">
-        <div class="container">
-           
-            <div class="row">
-
-                <table align = "center">
-                    <tr *ngFor="let kitchen of listKitchens">
-                        <td style = "text-align:center">{{product.FoodCategory}}</td>
-
-                        <td>
-                            <a [routerLink]="['/cart', { id:product.id }]">Add to Cart</a>
-                        </td>
-                    </tr>
-                </table>
+        <div class="content-center">
+            <div class="container">
+                <div class="title-brand">
+                </div>
             </div>
+          </div> 
+      </div>
+
+<div class="section">
+    <div class="container">
+        <div class="tim-title">
+            <h2 align = "center">Kitchens</h2>
         </div>
     </div>
-
 </div>
+          
+<table align = "center">
+    
+    <td *ngFor="let kitchen of listKitchens">
+        <tr>
+            <div class="card-avatar">
+
+                <div class="card card-profile card-plain">
+                    <div class="card-avatar">
+                        <a href="/#/kitchens"><img [src]="getSource(kitchen)" alt="..."></a>
+                    </div>
+                    <div class="card-block">
+                        <a>
+                            <div class="author">
+                                <h4 class="card-title">{{kitchen.KitchenName}}</h4>
+                                <h6 class="card-category">{{kitchen.Email}}</h6>
+                            </div>
+                        </a>
+                        <p class="card-description text-center">
+                            <button (click) ="kitchenMenu(kitchen)" type="button" class="btn btn-default btn-round">Menu</button>
+                        </p>
+                    </div>
+                    <div class="card-footer text-center">
+                        
+                    </div>
+                </div> 
+            </div>
+            
+        </tr>
+    </td>
+</table>

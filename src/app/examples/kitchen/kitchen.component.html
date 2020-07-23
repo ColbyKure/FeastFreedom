@@ -5,29 +5,20 @@
     
     <div class="section text-center">
         <div class="container">
-            <h2 class="title">Kitchens</h2>
-            
+           
             <div class="row">
-                <div class="col-md-4">
-                    
-                    <div class="card card-profile card-plain">
-                        <div class="card-avatar">
-                            <a href="/#/kitchen"><img src="./assets/img/faces/mcdonald.jpg" alt="..."></a>
-                        </div>
-                        <div class="card-block">
-                            <a>
-                                <div class="author">
-                                    <h4 class="card-title">Mcdonalds</h4>
-                                    <h6 class="card-category">Fast Food</h6>
-                                </div>
-                            </a>
-                            <p class="card-description text-center">
-                                McDonald's (MCD) is a fast food, limited service restaurant with more than 35,000 restaurants in over 100 countries. It employs more than four million people.
-                            </p>
-                        </div>
-                        
-                    </div> 
-                </div>
+
+                <table align = "center">
+                    <tr *ngFor="let kitchen of listKitchens">
+                        <td style = "text-align:center">{{product.FoodCategory}}</td>
+
+                        <td>
+                            <a [routerLink]="['/cart', { id:product.id }]">Add to Cart</a>
+                        </td>
+                    </tr>
+                </table>
+
+                
                 
                 <div class="col-md-4">
                     

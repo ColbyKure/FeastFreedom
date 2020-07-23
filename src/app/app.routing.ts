@@ -11,7 +11,7 @@ import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.compo
 import { AboutComponent } from './examples/about/about.component';
 import { LoginComponent } from './examples/login/login.component';
 import { HomepageComponent} from './examples/homepage/homepage.component';
-import { KitchenComponent } from './examples/kitchen/kitchen.component';
+import { KitchensComponent } from './examples/kitchens/kitchens.component';
 import { ItemsComponent } from './examples/items/items.component';
 import { SignupkitchenComponent } from './examples/signupkitchen/signupkitchen.component';
 import { SignupuserComponent } from './examples/signupuser/signupuser.component';
@@ -29,7 +29,7 @@ const routes: Routes =[
     { path: 'about',      component: AboutComponent },
     { path: 'login',      component: LoginComponent },
     { path: 'homepage',      component: HomepageComponent },
-    { path: 'kitchen',      component: KitchenComponent },
+    { path: 'kitchens',      component: KitchensComponent },
     { path: 'items',      component: ItemsComponent },
     { path: 'signupkitchen',      component: SignupkitchenComponent },
     { path: 'signupuser',      component: SignupuserComponent },

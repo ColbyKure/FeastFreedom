@@ -12,7 +12,6 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { SignupkitchenComponent } from './signupkitchen/signupkitchen.component';
 import { KitchensComponent } from './kitchens/kitchens.component';
 import { ItemsComponent } from './items/items.component';
-import { CartComponent } from './cart/cart.component';
 import { SignupuserComponent } from './signupuser/signupuser.component';
 import { CreateitemComponent } from './createitem/createitem.component';
 
@@ -32,7 +31,6 @@ import { CreateitemComponent } from './createitem/createitem.component';
         SignupkitchenComponent,
         KitchensComponent,
         ItemsComponent,
-        CartComponent,
         SignupuserComponent,
         CreateitemComponent
     ]

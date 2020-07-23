@@ -14,6 +14,7 @@ import { HomepageComponent} from './examples/homepage/homepage.component';
 import { KitchenComponent } from './examples/kitchen/kitchen.component';
 import { ItemsComponent } from './examples/items/items.component';
 import { SignupkitchenComponent } from './examples/signupkitchen/signupkitchen.component';
+import { SignupuserComponent } from './examples/signupuser/signupuser.component';
 import { CartComponent } from './examples/cart/cart.component';
 
 const routes: Routes =[
@@ -29,6 +30,7 @@ const routes: Routes =[
     { path: 'kitchen',      component: KitchenComponent },
     { path: 'items',      component: ItemsComponent },
     { path: 'signupkitchen',      component: SignupkitchenComponent },
+    { path: 'signupuser',      component: SignupuserComponent },
     { path: 'cart',      component: CartComponent }
 ];
 
@@ -40,7 +42,6 @@ const routes: Routes =[
       useHash: true
     })
   ],
-  exports: [
-  ],
+  exports: [],
 })
 export class AppRoutingModule { }

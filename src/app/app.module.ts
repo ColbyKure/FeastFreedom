@@ -13,6 +13,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 
 import { ComponentsModule } from './components/components.module';
 import { ExamplesModule } from './examples/examples.module';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { ExamplesModule } from './examples/examples.module';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     NgbModule,
     FormsModule,
     RouterModule,

@@ -32,6 +32,10 @@
                 <li class="nav-item" *ngIf="isRegularUser()">
                     <a [routerLink]="['/cart']" class="btn button">Cart  <i _ngcontent-ldk-c119="" class="nc-icon nc-cart-simple"></i></a>
                 </li>
+
+                <li class="nav-item" *ngIf="isLoggedIn()">
+                    <a class="btn button">Log out<i _ngcontent-ldk-c119="" class="nc-icon nc-cart-simple"></i></a>
+                </li>
             </ul>
 
             

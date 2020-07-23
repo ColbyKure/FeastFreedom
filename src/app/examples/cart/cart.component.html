@@ -1,1 +1,44 @@
-<p>cart works!</p>
+<div class="wrapper">
+    <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('assets/img/antoine-barres.jpg');">
+        <div class="filter"></div>
+        <div class="content-center">
+            <div class="container">
+                <div class="title-brand">
+                </div>
+            </div>
+          </div> 
+      </div>
+<div class="section">
+    <div class="container">
+        <div class="tim-title">
+            <h2>Your Cart</h2>
+        </div>
+    </div> 
+</div>
+
+<table align = "center" width="1000">
+    <tr>
+        <th style = "text-align:center">Option</th>
+        <th style = "text-align:center">Photo</th>
+        <th style = "text-align:center">Name</th>
+        <th style = "text-align:center">Price</th>
+        <th style = "text-align:center">Quantity</th>
+        <th style = "text-align:center">Sub Total</th>
+    </tr>
+    <tr *ngFor="let item of items">
+        <td style = "text-align:center">
+            <a (click)="remove(item.product.id)">X</a>
+        </td>
+        <td style = "text-align:center">
+            <img src={{item.product.Photo}} width ="150">
+        </td>
+        <td style="font-weight:bold" style = "text-align:center">{{item.product.Name}}</td>
+        <td style = "text-align:center">${{item.product.Price}}</td>
+        <td style = "text-align:center">{{item.quantity}}</td>
+        <td style = "text-align:center">${{item.product.Price * item.quantity}}</td>
+    </tr>
+    <tr>
+        <td colspan="6"> Total</td>
+        <td>${{total}}</td>
+    </tr>
+</table>

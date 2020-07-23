@@ -27,7 +27,7 @@
                                 </div>
 
                                   <input type="text" class="form-control" placeholder="Email" (focus)="focus=true" (blur)="focus=false" 
-                                  name="email" required="true" [(ngModel)]="uModel.Email">
+                                  name="formEmail" required="true" [(ngModel)]="formEmail">
                               </div>
 
                               <label>Password</label>
@@ -38,12 +38,12 @@
                                   </span>
                                 </div>
                                   <input type="text" class="form-control" placeholder="Password" (focus)="focus1=true" (blur)="focus1=false" 
-                                  name="password" required="true" [(ngModel)]="uModel.Password">
+                                  name="formPassword" required="true" [(ngModel)]="formPassword">
                               </div>
 
                               <div class="form-check">
                                 <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="">
+                                  <input class="form-check-input" type="checkbox" value="" [(ngModel)]="isKitchen" name="isKitchen">
                                   Check if you're a kitchen
                                   <span class="form-check-sign"></span>
                                 </label>

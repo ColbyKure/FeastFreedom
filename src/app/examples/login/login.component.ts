@@ -108,7 +108,7 @@ export class LoginComponent implements OnInit {
     else {
       console.log('user has logged in.');
       localStorage.setItem('isKitchen', 'false');
-      this.router.navigate(['/kitchen']);
+      this.router.navigate(['/kitchens']);
     }
   }
 }

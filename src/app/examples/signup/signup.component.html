@@ -17,9 +17,9 @@
                                   <i class="fa fa-twitter"></i>
                               </a>
                           </div>
-                          <form class="register-form" (ngSubmit)="onSubmit()">
+                          <form class="register-form" #signupForm="ngForm" (ngSubmit)="onSubmit(signupForm)" novalidate>
                               <label>Email</label>
-                              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                              <div class="input-group form-group-no-border" name="formEmail" [(ngModel)]="formEmail" [ngClass]="{'input-group-focus':focus===true}">
                                 <div class="input-group-prepend">
                                   <span class="input-group-text">
                                       <i class="nc-icon nc-email-85"></i>
@@ -30,7 +30,7 @@
                               </div>
 
                               <label>Password</label>
-                              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus1===true}">
+                              <div class="input-group form-group-no-border" name="formPassword" [(ngModel)]="formPassword" [ngClass]="{'input-group-focus':focus1===true}">
                                 <div class="input-group-prepend">
                                   <span class="input-group-text">
                                       <i class="nc-icon nc-key-25"></i>
@@ -40,7 +40,7 @@
                               </div>
 
                               <label>Confirm Password</label>
-                              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus1===true}">
+                              <div class="input-group form-group-no-border" name="formConfPass" [(ngModel)]="formConfPass" [ngClass]="{'input-group-focus':focus1===true}">
                                 <div class="input-group-prepend">
                                   <span class="input-group-text">
                                       <i class="nc-icon nc-key-25"></i>
@@ -60,7 +60,7 @@
                               <div *ngIf="kitchen()">
 
                                 <label>Service Provider Name</label>
-                                <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                                <div class="input-group form-group-no-border" name="formKitchenName" [(ngModel)]="formKitchenName" [ngClass]="{'input-group-focus':focus===true}">
                                     <div class="input-group-prepend">
                                     </div>
                                     <input type="text" class="form-control" placeholder="Service Provider Name" (focus)="focus=true" (blur)="focus=false" id="serviceProviderName" required="true" >
@@ -71,17 +71,17 @@
                               <div *ngIf="regularUser()">
 
                                 <label>First Name</label>
-                                <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                                <div class="input-group form-group-no-border" name="formFirstName" [(ngModel)]="formFirstName" [ngClass]="{'input-group-focus':focus===true}">
                                     <div class="input-group-prepend">
                                     </div>
                                     <input type="text" class="form-control" placeholder="First Name" (focus)="focus=true" (blur)="focus=false" id="firstName" required="true" >
                                 </div>
 
                                 <label>Last Name</label>
-                                <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                                <div class="input-group form-group-no-border" name="formLastName" [(ngModel)]="formLastName" [ngClass]="{'input-group-focus':focus===true}">
                                     <div class="input-group-prepend">
                                     </div>
-                                    <input type="text" class="form-control" placeholder="First Name" (focus)="focus=true" (blur)="focus=false" id="lastName" required="true" >
+                                    <input type="text" class="form-control" placeholder="Last Name" (focus)="focus=true" (blur)="focus=false" id="lastName" required="true" >
                                 </div>
 
                               </div>

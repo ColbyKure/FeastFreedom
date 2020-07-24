@@ -1,3 +1,27 @@
+<style>
+    .cd-cart__footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-radius: 0 0 var(--radius) var(--radius);
+    box-shadow: 0 -2px 20px rgba(#000, .15);
+    background: var(--cd-color-3);
+  } 
+
+  .cd-cart__checkout {
+    display: block;
+    height: 72px;
+    line-height: 72px;
+    margin-right: 72px;
+    background: var(--cd-color-2);
+    color: alpha(var(--cd-color-3), 0);
+    text-align: center;
+    font-size: var(--text-md);
+    font-weight: 600;
+    transition: all .2s 0s;
+}
+</style>
+
 <div class="wrapper">
     <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('assets/img/antoine-barres.jpg');">
         <div class="filter"></div>
@@ -8,6 +32,7 @@
             </div>
           </div> 
       </div>
+
 <div class="section">
     <div class="container">
         <div class="tim-title">
@@ -42,3 +67,15 @@
         <td>${{total}}</td>
     </tr>
 </table>
+
+<div class="section">
+    <div class="container" style="text-align:right">
+    <a [routerLink]="['/products']" class="btn btn-default btn-round">Continue Shopping</a>
+    <a [routerLink]="['/checkout']" class="btn btn-default btn-round">Checkout</a>
+</div>
+</div>
+
+
+
+	
+

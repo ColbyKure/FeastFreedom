@@ -52,9 +52,9 @@ export class KitchensComponent implements OnInit {
   }
 
   kitchenMenu(kitchen: Kitchen){
-
-    console.log("Kitchen Menu");
-
+    console.log("found kitchen", kitchen)
+    localStorage.setItem('kitchenid', JSON.stringify(kitchen._id))
+    this.router.navigate(['/products']);
   }
 
   async listKitchen(){

@@ -21,9 +21,9 @@ export class ProductComponent implements OnInit {
   	) { }
 
 	ngOnInit() {
-		//let promise:any = this.kService.getKitchenByID(JSON.parse(localStorage.getItem('kitchenid'))).toPromise();
-		let hard_coded = "5f1a6e60382ae46cec07d291";
-		let promise:any = this.kService.getKitchenByID(hard_coded).toPromise();
+		let promise:any = this.kService.getKitchenByID(JSON.parse(localStorage.getItem('kitchenid'))).toPromise();
+		// let hard_coded = "5f1a6e60382ae46cec07d291";
+		// let promise:any = this.kService.getKitchenByID(hard_coded).toPromise();
     	promise.then((data) => {
 			console.log(data);
 			this.products = data.items;
@@ -34,7 +34,7 @@ export class ProductComponent implements OnInit {
 		});
 	}
 
-	
+
 
 
 }

@@ -18,7 +18,7 @@
                     <div class="col-lg-4 col-sm-6 mr-auto">
                       <div class="card card-register" >
                           <h3 class="title" style="font-size: xx-large; font-weight: 500; color: whitesmoke;">Kitchen Info</h3>
-                          <form class="register-form" (ngSubmit)="onSubmit()">
+                          <form class="register-form" #kForm="ngForm" (ngSubmit)="onSubmit(kForm)" novalidate>
                               <label>Kitchen Type</label>
                               <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
                                 <div class="input-group-prepend">
@@ -27,38 +27,39 @@
                                   </span>
                                 </div>
 
-                                  <input type="text" class="form-control" placeholder="Kitchen Type" (focus)="focus=true" (blur)="focus=false" id="email" required="true" >
+                                  <input type="text" class="form-control" placeholder="Kitchen Type" (focus)="focus=true" (blur)="focus=false" 
+                                  name="formKtype" required="true" [(ngModel)]="formKtype" id="type">
                               </div>
 
                               <label>Working Days</label>
-                              <div class="form-check">
+                              <div class="form-check" id="days">
                                 <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="">
+                                  <input class="form-check-input" type="checkbox" value="Monday">
                                   <span class="form-check-sign">
                                       <span style="width:100px;display:inline-block;">Monday</span>
                                   </span>
                                 </label>
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" value="">
+                                    <input class="form-check-input" type="checkbox" value="Tuesday">
                                     <span class="form-check-sign">
                                         <span style="width:100px;display:inline-block;">Tuesday</span>
                                     </span>
                                   </label>
                                   <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" value="">
+                                    <input class="form-check-input" type="checkbox" value="Wednesday">
                                     <span class="form-check-sign">
                                         <span style="width:100px;display:inline-block;">Wednesday</span>
                                     </span>
                                   </label>
                                   <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" value="">
+                                    <input class="form-check-input" type="checkbox" value="Thursday">
                                     <span class="form-check-sign">
                                         <span style="width:100px;display:inline-block;">Thursday</span>
                                     </span>
                                   </label>
                                   <br>
                                   <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" value="">
+                                    <input class="form-check-input" type="checkbox" value="Friday">
                                     <span class="form-check-sign">
                                         <span style="width:100px;display:inline-block;">Friday</span>
                                     </span>
@@ -70,7 +71,7 @@
                                     </span>
                                   </label>
                                   <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" value="">
+                                    <input class="form-check-input" type="checkbox" value="Saturday">
                                     <span class="form-check-sign">
                                         <span style="width:100px;display:inline-block;">Sunday</span>
                                     </span>
@@ -85,7 +86,8 @@
                                   </span>
                                 </div>
 
-                                  <input type="text" class="form-control" placeholder="hh:mm AM/PM" (focus)="focus=true" (blur)="focus=false" id="email" required="true" >
+                                  <input type="text" class="form-control" placeholder="hh:mm AM/PM" (focus)="focus=true" (blur)="focus=false" 
+                                  name="formOtime" [(ngModel)]="formOtime" id="opentime" required="true" >
                               </div>
 
                               <label>Close Time</label>
@@ -96,7 +98,8 @@
                                   </span>
                                 </div>
 
-                                  <input type="text" class="form-control" placeholder="hh:mm AM/PM" (focus)="focus=true" (blur)="focus=false" id="email" required="true" >
+                                  <input type="text" class="form-control" placeholder="hh:mm AM/PM" (focus)="focus=true" (blur)="focus=false" 
+                                  name="formCtime" [(ngModel)]="formCtime"  id="closetime" required="true" >
                               </div>
 
 
@@ -107,10 +110,11 @@
                                       <i class="nc-icon nc-image"></i>
                                   </span>
                                 </div>
-                                  <input type="text" class="form-control" placeholder="Upload Image" (focus)="focus1=true" (blur)="focus1=false" id="confirmPassword" required="true" >
+                                  <input type="text" class="form-control" placeholder="Upload Image" (focus)="focus1=true" (blur)="focus1=false" 
+                                  name="formImage" [(ngModel)]="formImage" id="image">
                               </div>
 
-                              <div class="file-field md-form">
+                              <!-- <div class="file-field md-form">
                                 <div mdbBtn floating="true" size="md" gradient="purple" mdbWavesEffect>
                                   <mdb-icon fas icon="cloud-upload-alt" aria-hidden="true"></mdb-icon>
                                   <input type="file" mdbFileSelect (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput">
@@ -119,7 +123,7 @@
                                 <input class="file-path" type="text" placeholder="Upload your file" [value]="showFiles()">
                               </div>
                             </div>
-                            <button mdbBtn type="button" gradient="purple" class="waves-light" (click)="startUpload()" mdbWavesEffect>Start uploading</button>
+                            <button mdbBtn type="button" gradient="purple" class="waves-light" (click)="startUpload()" mdbWavesEffect>Start uploading</button> -->
 
                               <button class="btn btn-danger btn-block btn-round" type="submit">Register Kitchen</button>
                           </form>

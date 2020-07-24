@@ -19,34 +19,37 @@
                           </div>
                           <form class="register-form" #signupForm="ngForm" (ngSubmit)="onSubmit(signupForm)" novalidate>
                               <label>Email</label>
-                              <div class="input-group form-group-no-border" name="formEmail" [(ngModel)]="formEmail" [ngClass]="{'input-group-focus':focus===true}">
+                              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
                                 <div class="input-group-prepend">
                                   <span class="input-group-text">
                                       <i class="nc-icon nc-email-85"></i>
                                   </span>
                                 </div>
 
-                                  <input type="text" class="form-control" placeholder="Email" (focus)="focus=true" (blur)="focus=false" id="email" required="true" >
+                                  <input type="text" class="form-control" placeholder="Email" (focus)="focus=true" (blur)="focus=false" 
+                                  name="formEmail" required="true" [(ngModel)]="formEmail">
                               </div>
 
                               <label>Password</label>
-                              <div class="input-group form-group-no-border" name="formPassword" [(ngModel)]="formPassword" [ngClass]="{'input-group-focus':focus1===true}">
+                              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus1===true}">
                                 <div class="input-group-prepend">
                                   <span class="input-group-text">
                                       <i class="nc-icon nc-key-25"></i>
                                   </span>
                                 </div>
-                                  <input type="text" class="form-control" placeholder="Password" (focus)="focus1=true" (blur)="focus1=false" id="password" required="true" type="password" >
+                                  <input type="text" class="form-control" placeholder="Password" (focus)="focus1=true" (blur)="focus1=false"
+                                  name="formPassword" [(ngModel)]="formPassword" id="password" required="true" type="password" >
                               </div>
 
                               <label>Confirm Password</label>
-                              <div class="input-group form-group-no-border" name="formConfPass" [(ngModel)]="formConfPass" [ngClass]="{'input-group-focus':focus1===true}">
+                              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus1===true}">
                                 <div class="input-group-prepend">
                                   <span class="input-group-text">
                                       <i class="nc-icon nc-key-25"></i>
                                   </span>
                                 </div>
-                                  <input type="text" class="form-control" placeholder="Password" (focus)="focus1=true" (blur)="focus1=false" id="confirmPassword" required="true" type="password" >
+                                  <input type="text" class="form-control" placeholder="Password" (focus)="focus1=true" (blur)="focus1=false" 
+                                  name="formConfPass" [(ngModel)]="formConfPass" id="confirmPassword" required="true" type="password" >
                               </div>
 
                               <div ngbDropdown class="d-inline-block dropdown">
@@ -60,10 +63,11 @@
                               <div *ngIf="kitchen()">
 
                                 <label>Service Provider Name</label>
-                                <div class="input-group form-group-no-border" name="formKitchenName" [(ngModel)]="formKitchenName" [ngClass]="{'input-group-focus':focus===true}">
+                                <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
                                     <div class="input-group-prepend">
                                     </div>
-                                    <input type="text" class="form-control" placeholder="Service Provider Name" (focus)="focus=true" (blur)="focus=false" id="serviceProviderName" required="true" >
+                                    <input type="text" class="form-control" placeholder="Service Provider Name" (focus)="focus=true" (blur)="focus=false" 
+                                    name="formKitchenName" [(ngModel)]="formKitchenName" id="serviceProviderName" required="true" >
                                 </div>
 
                               </div>
@@ -71,17 +75,19 @@
                               <div *ngIf="regularUser()">
 
                                 <label>First Name</label>
-                                <div class="input-group form-group-no-border" name="formFirstName" [(ngModel)]="formFirstName" [ngClass]="{'input-group-focus':focus===true}">
+                                <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
                                     <div class="input-group-prepend">
                                     </div>
-                                    <input type="text" class="form-control" placeholder="First Name" (focus)="focus=true" (blur)="focus=false" id="firstName" required="true" >
+                                    <input type="text" class="form-control" placeholder="First Name" (focus)="focus=true" (blur)="focus=false" 
+                                    name="formFirstName" [(ngModel)]="formFirstName"  id="firstName" required="true" >
                                 </div>
 
                                 <label>Last Name</label>
-                                <div class="input-group form-group-no-border" name="formLastName" [(ngModel)]="formLastName" [ngClass]="{'input-group-focus':focus===true}">
+                                <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
                                     <div class="input-group-prepend">
                                     </div>
-                                    <input type="text" class="form-control" placeholder="Last Name" (focus)="focus=true" (blur)="focus=false" id="lastName" required="true" >
+                                    <input type="text" class="form-control" placeholder="Last Name" (focus)="focus=true" (blur)="focus=false" 
+                                    name="formLastName" [(ngModel)]="formLastName"  id="lastName" required="true" >
                                 </div>
 
                               </div>

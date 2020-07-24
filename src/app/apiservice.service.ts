@@ -66,8 +66,8 @@ export class ApiserviceService {
     return this.http.get<Kitchen[]>(this.rootURL + '/kitchens/email/' + email)
     .pipe(catchError(this.errorHandler));
   }
-  addProduct(kitchen:any): Observable<Kitchen[]> {
-    return this.http.put<Kitchen[]>(this.rootURL + '/kitchens/'+ kitchen._id, kitchen)
+  addProduct(item:any, kitchenid:String): Observable<Kitchen[]> {
+    return this.http.post<Kitchen[]>(this.rootURL + '/kitchens/'+ kitchenid, item)
     .pipe(catchError(this.errorHandler));
   }
   deleteProduct(itemid:String):Observable<Product[]> {

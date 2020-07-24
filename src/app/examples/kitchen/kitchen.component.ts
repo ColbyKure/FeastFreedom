@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Kitchen } from '../../models/kitchen';
 import { Router } from '@angular/router';
+import { ApiserviceService } from '../../apiservice.service';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -19,7 +21,11 @@ export class KitchenComponent implements OnInit {
   ];
   private selectedKitchen: Kitchen;
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,private kService:ApiserviceService ) {
+
+    
+
+   }
 
   ngOnInit(): void {
     if (!localStorage.getItem('foo')) { 
@@ -39,5 +45,7 @@ export class KitchenComponent implements OnInit {
     console.log(kitchen.KitchenName);
 
   }
+
+  
 
 }

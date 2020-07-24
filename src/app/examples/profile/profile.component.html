@@ -21,7 +21,7 @@
                 </div>
             </div>
             <br/>
-            <div class="nav-tabs-navigation">
+            <div class="nav-tabs-navigation" *ngIf="!isKitchen()" >
                 <div class="nav-tabs-wrapper">
                     <ngb-tabset [justify]="'center'">
                         <ngb-tab title="Favorite Restaurants">

@@ -3,7 +3,7 @@ export class Kitchen {
     public KitchenName:String;
     public Email:String;
     public Password:String;
-    public KitchenType:Number;
+    public KitchenType:String;
     public WorkingDays:String;
     public OpenTime:String;
     public CloseTime:String;

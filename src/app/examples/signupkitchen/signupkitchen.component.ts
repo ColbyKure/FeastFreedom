@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 //import { FormArray, Validators } from '@angular/forms';
-//import { ApiServiceService } from '../../apiservice.service';
+import { Kitchen } from '../../models/kitchen';
+import { ApiserviceService } from '../../apiservice.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,86 +13,72 @@ import { Router } from '@angular/router';
 export class SignupkitchenComponent implements OnInit {
 
   // public kitchenForm;
+  kModel = new Kitchen();
+  formKtype:String;
+  //formDays: String;
+  formOtime: String;
+  formCtime: String;
+  formImage: String;
+  errMsg:String;
+  kitchens: any;
+
+  email = JSON.parse(localStorage.getItem('currformEmail'));
+  password = JSON.parse(localStorage.getItem('currformPassword'));
+  name = JSON.parse(localStorage.getItem('currformKitchenName'));
+
   
-  constructor(private router: Router) {
+  constructor(private kService:ApiserviceService,
+    private router:Router) {
     
    }
 
    ngOnInit(): void {
-  //  ngOnInit(): void {
-    //  this.kitchenForm = this.fb.group({
-    //     KitchenName: ['', [Validators.required, Validators.minLength(3)]],
-    //     Email: ['', [Validators.required, Validators.minLength(3)]],
-    //     Password: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
-    //     KitchenType: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
-    //     WorkingDays: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
-    //     OpenTime: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
-    //     CloseTime: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
-    //     ImagePath: ['', [Validators.required, Validators.pattern('^[0-9]+$')]]
-  //  });
-      //});
+  
     }
 
-    onSubmit(){
+    removeKitchenLocalStorage() {
+      localStorage.removeItem('currformEmail');
+     localStorage.removeItem('currformPassword');
+     localStorage.removeItem('currformKitchenName');
+   } 
 
-          this.router.navigate(['/createitem']);
-
-  }
-
+    async onSubmit(kForm){
+      //console.log('user storage before remove');
+      let promise:any;
+        this.kModel.Email = this.email;
+        this.kModel.KitchenName = this.name;
+        this.kModel.Password = this.password;
+        this.kModel.KitchenType = this.formKtype;
+        this.kModel.WorkingDays = "Monday";
+        this.kModel.OpenTime = this.formOtime;
+        this.kModel.CloseTime = this.formCtime;
+        this.kModel.ImagePath = this.formImage;
+        this.removeKitchenLocalStorage();
+        console.log(this.kModel.Email)
+        console.log(this.kModel.Password)
+        console.log(this.kModel.KitchenName)
+        console.log(this.kModel.KitchenType)
+        //console.log(this.kModel.WorkingDays)
+        console.log(this.kModel.OpenTime)
+        console.log(this.kModel.CloseTime)
+        console.log(this.kModel.ImagePath)
+        
+        promise = this.kService.postKitchen(this.kModel).toPromise();
+        promise.then((data) => {
+          this.kitchens = data;
+          this.router.navigate(['/createitem'])
+        }).catch((error) => {
+          console.log('This is the error')
+          console.log(error)
+          this.errMsg = error
+          this.router.navigate(['/signup']);
+          //localStorage.setItem('errorLogin', 'not Logged in');
+          alert("wrong information")
+        });
+        
+    }
     
 
 }
 
-// @Component({
-//   selector: 'app-addemployee',
-//   templateUrl: './addemployee.component.html',
-//   styleUrls: ['./addemployee.component.css']
-// })
-// export class AddemployeeComponent implements OnInit {
-
-//   public employeeForm;
-//   employees;
-//   errorMsg;
-
-//   constructor(private fb: FormBuilder, private empService: EmployeeService, private router: Router) { }
-
-//   ngOnInit(): void {
-//      this.employeeForm = this.fb.group({
-//       firstName: ['', [Validators.required, Validators.minLength(3)]],
-//       lastName: ['', [Validators.required, Validators.minLength(3)]],
-//       Salary: ['', [Validators.required, Validators.pattern('^[0-9]+$')]]
-//     });
-//   }
-
-//   onSubmit(employeeForm){
-//     console.log(this.employeeForm.value);
-//     this.empService.postEmployee(this.employeeForm.value).subscribe(
-//       (data) => {
-//         this.employees = data; 
-//         console.log(this.employees);
-//         this.empService.getEmployees().subscribe(
-//           (data) => this.employees = data,
-//           (error) => this.errorMsg = error
-//         )
-//       },
-//       (error) => this.errorMsg = error
-//     )
-//     this.router.navigate(['/employeelist']);
-//     this.employeeForm.reset();
-//   }
-
-//   get firstName() {
-//     return this.employeeForm.get('firstName');
-//   }
-
-//   get lastName() {
-//     return this.employeeForm.get('lastName');
-//   }
-
-//   get Salary() {
-//     return this.employeeForm.get('Salary');
-//   }
-
-
-// }
 

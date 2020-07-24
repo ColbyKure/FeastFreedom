@@ -88,6 +88,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('currUserToken', JSON.stringify(this.users.token));
         localStorage.setItem('currUserName', JSON.stringify(this.users.user.KitchenName));
         localStorage.setItem('currUserID', JSON.stringify(this.users.user._id));
+        localStorage.setItem('kitchenid', JSON.stringify(this.users.user._id));
         localStorage.removeItem('errorLogin');
         // console.log('storage after set: user');
         // this.printUserLocalStorage();

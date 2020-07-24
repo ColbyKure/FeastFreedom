@@ -8,15 +8,15 @@ export class ProductService {
 
     constructor() {
         this.products = [
-            { id: 1, Name: "Pineapple Fried Rice", Price: 12, 
-            Description: "Shrimp, chicken, raisins, cashew nuts, broccoli, a touch of curry powder, dried shredded pork.",
-            Photo:"assets/img/PineappleFriedRice.jpg", FoodCategory: "Thai"},
-            { id: 2, Name: "Shrimp Tempura", Price: 8, 
-            Description: "Shrimp or vegetable, sweet and sour dip.",
-            Photo:"assets/img/ShrimpTempura.jpg", FoodCategory: "Asian"},
-            { id: 3, Name: "Pineapple Fried Rice", Price: 12, 
-            Description: "Shrimp, chicken, raisins, cashew nuts, broccoli, a touch of curry powder, dried shredded pork.",
-            Photo:"assets/img/thai.jpg", FoodCategory: "Thai"}
+            { _id: 1, ItemName: "Pineapple Fried Rice", Price: 12, 
+            ItemDescription: "Shrimp, chicken, raisins, cashew nuts, broccoli, a touch of curry powder, dried shredded pork.",
+            ImagePath:"assets/img/PineappleFriedRice.jpg", ItemCategory: 1},
+            { _id: 2, ItemName: "Shrimp Tempura", Price: 8, 
+            ItemDescription: "Shrimp or vegetable, sweet and sour dip.",
+            ImagePath:"assets/img/ShrimpTempura.jpg", ItemCategory: 2},
+            { _id: 3, ItemName: "Pineapple Fried Rice", Price: 12, 
+            ItemDescription: "Shrimp, chicken, raisins, cashew nuts, broccoli, a touch of curry powder, dried shredded pork.",
+            ImagePath:"assets/img/thai.jpg", ItemCategory: 3}
         ];
     }
 
@@ -30,7 +30,7 @@ export class ProductService {
 
     private getSelectedIndex(id: string) {
         for (var i = 0; i < this.products.length; i++) {
-            if (this.products[i].id == id) {
+            if (this.products[i]._id == id) {
                 return i;
             }
         }

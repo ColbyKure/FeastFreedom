@@ -37,7 +37,7 @@ export class CartComponent implements OnInit {
 					let index: number = -1;
 					for (var i = 0; i < cart.length; i++) {
 						let item: Item = JSON.parse(cart[i]);
-						if (item.product.id == id) {
+						if (item.product._id == id) {
 							index = i;
 							break;
 						}
@@ -78,7 +78,7 @@ export class CartComponent implements OnInit {
 		let index: number = -1;
 		for (var i = 0; i < cart.length; i++) {
 			let item: Item = JSON.parse(cart[i]);
-			if (item.product.id == id) {
+			if (item.product._id == id) {
 				cart.splice(i, 1);
 				break;
 			}

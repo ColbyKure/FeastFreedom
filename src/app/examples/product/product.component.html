@@ -9,21 +9,22 @@
           </div> 
       </div>
 
-<div class="section">
     <div class="container">
-        <div class="tim-title">
+        <div class="tim-title" style ="text-align:center">
             <h2>Menu</h2>
         </div>
     </div>
+ 
+<div class="container">
+        <h3>Appetizers</h3>        
 </div>
-          
-<table align = "center">
+<br/>
+<table align = "center" width = "1130">
     <tr style = "text-align:center">
         <th> </th>
         <th style = "text-align:center">Name</th>
         <th style = "text-align:center">Price</th>
         <th style = "text-align:center">Description</th>
-        <th style = "text-align:center">Category</th>
         <th style = "text-align:center">Buy</th>
     </tr>
     <tr *ngFor="let product of products">
@@ -33,10 +34,24 @@
         <td style="font-weight:bold">{{product.Name}}</td>
         <td style = "text-align:center">${{product.Price}} </td>
         <td>{{product.Description}} </td>
-        <td style = "text-align:center">{{product.FoodCategory}}</td>
         
         <td>
-            <a [routerLink]="['/cart', { id:product.id }]">Add to Cart</a>
+            <a [routerLink]="['/cart', { id:product.id }]" class="btn btn-default btn-round">Add to Cart</a>
         </td>
     </tr>
 </table>
+
+<div class="container">
+    <h3>Entrees</h3>        
+</div>
+<br/>
+
+<div class="container">
+    <h3>Beverages</h3>        
+</div>
+<br/>
+
+<div class="container">
+    <h3>Desserts</h3>        
+</div>
+<br/>

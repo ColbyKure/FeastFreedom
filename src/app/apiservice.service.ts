@@ -4,7 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { User } from './models/user';
 import { Kitchen } from './models/kitchen';
-import { Item } from './models/item';
+import { Product } from './models/Product';
 
 @Injectable({
   providedIn: 'root'
@@ -66,20 +66,20 @@ export class ApiserviceService {
     return this.http.get<Kitchen[]>(this.rootURL + '/kitchens/email/' + email)
     .pipe(catchError(this.errorHandler));
   }
-  addItem(kitchen:any): Observable<Kitchen[]> {
+  addProduct(kitchen:any): Observable<Kitchen[]> {
     return this.http.put<Kitchen[]>(this.rootURL + '/kitchens/'+ kitchen._id, kitchen)
     .pipe(catchError(this.errorHandler));
   }
-  deleteItem(itemid:String):Observable<Item[]> {
-    return this.http.delete<Item[]>(this.rootURL + '/items/' + itemid)
+  deleteProduct(itemid:String):Observable<Product[]> {
+    return this.http.delete<Product[]>(this.rootURL + '/items/' + itemid)
     .pipe(catchError(this.errorHandler));
   }
-  getItemByID(itemid:String): Observable<Item[]> {
-    return this.http.get<Item[]>(this.rootURL + '/items/' + itemid)
+  getProductByID(itemid:String): Observable<Product[]> {
+    return this.http.get<Product[]>(this.rootURL + '/items/' + itemid)
     .pipe(catchError(this.errorHandler));
   }
-  putItem(item:any): Observable<Item[]> { 
-    return this.http.put<Item[]>(this.rootURL + '/items/' + item._id, item)
+  putProduct(item:any): Observable<Product[]> { 
+    return this.http.put<Product[]>(this.rootURL + '/items/' + item._id, item)
     .pipe(catchError(this.errorHandler));
   }
 

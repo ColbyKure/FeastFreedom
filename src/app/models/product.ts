@@ -1,8 +1,8 @@
 export class Product {
-    public id: any;
-    public Name: String;
+    public _id: any;
+    public ItemName: String;
     public Price: Number;
-    public Description: String; 
-    public Photo: String;
-    public FoodCategory: String;
+    public ItemDescription: String; 
+    public ImagePath: String;
+    public ItemCategory: Number;
 }

@@ -1,0 +1,16 @@
+.card-register {
+    background-color: rgba(51, 50, 49, 0.945);
+    /* background: rgba(209, 103, 71, 0.671); */
+    /* background-color: #FF8F5E; */
+    width: 250%;
+    border-radius: 8px;
+    color: #fff;
+    max-width: 700px;
+    min-height: 400px;
+    /* padding-left: 50px; */
+    z-index: 1;
+} 
+
+a:hover {
+    background-color: rgba(129, 121, 121, 0.336);
+}

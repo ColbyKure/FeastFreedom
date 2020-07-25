@@ -61,9 +61,11 @@ export class ProductComponent implements OnInit {
 
 	addItem(){
 		console.log('you pressed addItem');
+		this.router.navigate(['/createitem']);
 	}
 	editItem(item:any){
 		localStorage.setItem('currItem', JSON.stringify(item));
+		this.router.navigate(['/editItem']);
 	}
 	deleteItem(item:any){
 		localStorage.setItem('currItem', JSON.stringify(item));

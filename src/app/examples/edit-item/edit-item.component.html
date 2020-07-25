@@ -4,7 +4,7 @@
                 <div class="row" style="padding-top: 50px; padding-left: 200px;">
                     <div class="col-lg-4 col-sm-6 mr-auto">
                       <div class="card card-register" >
-                          <h3 class="title" style="font-size: xx-large; font-weight: 500; color: whitesmoke;">Add Item to the Menu</h3>
+                          <h3 class="title" style="font-size: xx-large; font-weight: 500; color: whitesmoke;">Edit Menu Item</h3>
                           <form class="register-form" (ngSubmit)="onSubmit()">
                               <label>Item Name</label>
                               <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
@@ -14,7 +14,7 @@
                                   </span>
                                 </div>
 
-                                  <input type="text" class="form-control" placeholder="Item Name" name="itemName" [(ngModel)]="itemName"
+                                  <input type="text" class="form-control" value="{{itemName}}" name="itemName" [(ngModel)]="itemName"
                                     (focus)="focus=true" (blur)="focus=false" required="true" >
                               </div>
 
@@ -23,8 +23,6 @@
                                 <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="dropdown-primary">
                                   <a (click)="typeSelected(1)" class="dropdown-item"> Vegetarian</a>
                                   <a (click)="typeSelected(2)" class="dropdown-item"> Non-Vegetarian</a>
-                                    <!-- <a (click)="typeSelected(1)" class="dropdown-item">Vegetarian</a>
-                                    <a (click)="typeSelected(2)" class="dropdown-item">Non-Vegetarian</a> -->
                                 </div>
                               </div>
 
@@ -36,7 +34,7 @@
                                       <i class="nc-icon nc-minimal-right"></i>
                                   </span>
                                 </div>
-                                  <input type="text" class="form-control" placeholder="Description" name="Description" [(ngModel)]="Description"
+                                  <input type="text" class="form-control" value="{{Description}}" name="Description" [(ngModel)]="Description"
                                     (focus)="focus=true" (blur)="focus=false" required="true" >
                               </div>
 
@@ -47,7 +45,7 @@
                                       <i class="nc-icon nc-minimal-right"></i>
                                   </span>
                                 </div>
-                                  <input type="text" class="form-control" placeholder="$2.99" name="Price" [(ngModel)]="Price"
+                                  <input type="text" class="form-control" value="{{Price}}" name="Price" [(ngModel)]="Price"
                                     (focus)="focus=true" (blur)="focus=false" id="email" required="true" >
                               </div>
 
@@ -81,13 +79,13 @@
                             </div> -->
                             <!-- <button mdbBtn type="button" gradient="purple" class="waves-light" (click)="startUpload()" mdbWavesEffect>Start uploading</button> -->
 
-                            <button class="btn btn-danger btn-block btn-round" type="submit">Register Kitchen</button>
+                            <button class="btn btn-danger btn-block btn-round" type="submit">Submit</button>
                           </form>
                       </div>
                     </div>
                 </div>
                 <div class="footer register-footer text-center">
-                  <h6>&copy;&nbsp;2020 made with <i class="fa fa-heart heart"></i> by Team 3</h6>
+                    <h6>&copy;&nbsp;2020 made with <i class="fa fa-heart heart"></i> by Team 3</h6>
                 </div>
             </div>
     </div>

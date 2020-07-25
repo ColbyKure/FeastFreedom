@@ -18,6 +18,7 @@ import { CartComponent } from './examples/cart/cart.component';
 import { ProductComponent } from './examples/product/product.component';
 import { ProductService } from './services/product.service';
 import { DeleteItemComponent } from './examples/delete-item/delete-item.component';
+import { EditItemComponent } from './examples/edit-item/edit-item.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { DeleteItemComponent } from './examples/delete-item/delete-item.componen
     FooterComponent,
     CartComponent,
     ProductComponent,
-    DeleteItemComponent
+    DeleteItemComponent,
+    EditItemComponent
   ],
   imports: [
     BrowserModule,

@@ -19,6 +19,7 @@ import { CreateitemComponent } from './examples/createitem/createitem.component'
 import { CartComponent } from './examples/cart/cart.component';
 import { ProductComponent } from './examples/product/product.component';
 import { DeleteItemComponent } from './examples/delete-item/delete-item.component';
+import { EditItemComponent } from './examples/edit-item/edit-item.component';
 
 const routes: Routes =[
     { path: '', redirectTo: 'homepage', pathMatch: 'full' },
@@ -37,7 +38,8 @@ const routes: Routes =[
     { path: 'products',       component: ProductComponent },
     { path: 'createitem',     component: CreateitemComponent },
     { path: 'cart',           component: CartComponent },
-    { path: 'deleteItem',     component: DeleteItemComponent }
+    { path: 'deleteItem',     component: DeleteItemComponent },
+    { path: 'editItem',     component: EditItemComponent }
 ];
 
 @NgModule({

@@ -13,7 +13,7 @@ export class ProfileComponent implements OnInit {
 
     private loggedIn : boolean; //
     private typeUser : boolean; // true = Regular User ; false =  Kitchen
-    private userName : String;
+    public userName : String;
 
     constructor(private Uservice: ApiserviceService, private router:Router) {
 

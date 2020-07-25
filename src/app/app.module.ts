@@ -17,6 +17,7 @@ import { CommonModule } from '@angular/common';
 import { CartComponent } from './examples/cart/cart.component';
 import { ProductComponent } from './examples/product/product.component';
 import { ProductService } from './services/product.service';
+import { DeleteItemComponent } from './examples/delete-item/delete-item.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { ProductService } from './services/product.service';
     NavbarComponent,
     FooterComponent,
     CartComponent,
-    ProductComponent
+    ProductComponent,
+    DeleteItemComponent
   ],
   imports: [
     BrowserModule,

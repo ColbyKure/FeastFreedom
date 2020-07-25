@@ -10,35 +10,29 @@
 
     <div class="container">
         <div class="tim-title" style ="text-align:center">
-            <p></p>
             <h2>{{kitchen.KitchenName}}</h2>
         </div>
     </div>
-    <div class="container">
+    <div class="container" style="margin-bottom: 130px;">
         <h3 style="text-align: center;">Menu</h3> 
     </div>
-    <br/>
-    <table align = "center" class="table table-bordered">
-        <!-- <tr style = "text-align:center">
-            <th></th>
-            <th style = "text-align:center">Name</th>
-            <th style = "text-align:center">Price</th>
-            <th style = "text-align:center">Description</th>
-            <th style = "text-align:center">Buy</th>
-        </tr> -->
+    <div class="add-item">
+        <button class="btn btn-default" (click)=addItem()>Add Item</button>
+    </div>
+    <table align = "center" class="table table-bordered" style="margin-bottom: 50px;">
         <tr *ngFor="let product of products">
             <td align = center class="item-images">
                 <img src={{product.ImagePath}} width="150">
             </td>
             <td class="item-name"><strong>{{product.ItemName}}</strong></td>
             <td style = "text-align:center; vertical-align: middle;">{{product.Price | currency}} </td>
-            <td style="width: 30%; vertical-align: middle;">{{product.ItemDescription}} </td>
+            <td style="width: 30%; vertical-align: middle; padding: 20px;">{{product.ItemDescription}} </td>
             <td style="text-align: center; vertical-align: middle;" *ngIf="isUser()">
                 <a [routerLink]="['/cart', { id:product._id }]" class="btn btn-default">Add to Cart</a>
             </td>
             <td style="text-align: center; vertical-align: middle;" *ngIf="isKitchen()">
-                <a [routerLink]="['/cart', { id:product._id }]" class="btn btn-default">Edit</a>&nbsp;
-                <a [routerLink]="['/cart', { id:product._id }]" class="btn btn-default">Delete</a>
+                <button class="btn btn-default" (click)=editItem(product)>Edit</button>&nbsp;
+                <button class="btn btn-default" (click)=deleteItem(product)>Delete</button>
             </td>
         </tr>
     </table>

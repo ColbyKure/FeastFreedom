@@ -34,6 +34,7 @@
     "md-form-builder": "^0.14.7",
     "ng2-nouislider": "1.7.12",
     "ngx-cookie-service": "^3.0.4",
+    "ngx-filesaver": "^10.0.0",
     "nouislider": "9.2.0",
     "popper.js": "1.14.4",
     "rxjs": "6.5.4",

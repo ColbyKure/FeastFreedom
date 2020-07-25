@@ -59,5 +59,14 @@ export class ProductComponent implements OnInit {
 		return true;
     }
 
-
+	addItem(){
+		console.log('you pressed addItem');
+	}
+	editItem(item:any){
+		localStorage.setItem('currItem', JSON.stringify(item));
+	}
+	deleteItem(item:any){
+		localStorage.setItem('currItem', JSON.stringify(item));
+		this.router.navigate(['/deleteItem']);
+	}
 }

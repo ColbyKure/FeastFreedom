@@ -20,7 +20,7 @@ export class NavbarComponent implements OnInit {
         this.sidebarVisible = false;
         this.loggedIn = false;
         if(localStorage.getItem('currUserID') != null){
-            this.userName = localStorage.getItem('currUserName');
+            this.userName = JSON.parse(localStorage.getItem('currUserName'));
             this.loggedIn =  true;
             if(localStorage.getItem('isKitchen') == "true"){
 

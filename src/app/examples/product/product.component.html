@@ -29,13 +29,13 @@
     </tr>
     <tr *ngFor="let product of products">
         <td align = center>
-            <img src={{product.Photo}} width="150">
+            <img src={{product.ImagePath}} width="150">
         </td>
-        <td style="font-weight:bold">{{product.Name}}</td>
+        <td style="font-weight:bold">{{product.ItemName}}</td>
         <td style = "text-align:center">${{product.Price}} </td>
-        <td>{{product.Description}} </td>
+        <td>{{product.ItemDescription}}</td>
         <td>
-            <a [routerLink]="['/cart', { id:product.id }]" class="btn btn-default btn-round">Add to Cart</a>
+            <a [routerLink]="['/cart', { id:product._id }]" class="btn btn-default btn-round">Add to Cart</a>
         </td>
     </tr>
 </table>

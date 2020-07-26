@@ -25,8 +25,11 @@
                 <li class="nav-item" *ngIf="!isLoggedIn()">
                     <a [routerLink]="['/login']" class="btn btn-danger btn-round">Log In</a>
                 </li>
-                <li class="nav-item" *ngIf="isLoggedIn()">
-                    <a [routerLink]="['/user-profile']" class="btn btn-danger btn-round" placement="bottom" ngbTooltip={{userName}}>My Account</a>
+                <li class="nav-item" *ngIf="isLoggedIn() && isRegularUser()">
+                    <a (click)=userMyAccount() class="btn btn-danger btn-round" placement="bottom" ngbTooltip={{userName}}>My Account</a>
+                </li>
+                <li class="nav-item" *ngIf="isLoggedIn() && !isRegularUser()">
+                    <a (click)=kitchenMyAccount() class="btn btn-danger btn-round" placement="bottom" ngbTooltip={{userName}}>My Account</a>
                 </li>
 
                 <li class="nav-item" *ngIf="isRegularUser()">

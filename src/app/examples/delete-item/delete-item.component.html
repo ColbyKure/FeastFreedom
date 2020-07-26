@@ -1,0 +1,43 @@
+<div class="wrapper">
+    <div class="page-header" style="background-image: url('assets/img/antoine-barres.jpg');">
+        <div class="filter"></div>
+            <div class="container" >
+                <div class="row" style="padding-top: 0px; padding-left: 250px;">
+                    <div class="col-lg-4 col-sm-6 mr-auto">
+                        <div class="card card-register" style="padding: 40px;">
+                            <div class="delete-title"><b>Delete this item from your menu?</b></div>
+                            <br/>
+                            <div class="row">
+                                <div class="item-label"><b>Item Name:</b></div>
+                                <div class="item-value1">{{toDelete.ItemName}}</div>
+                            </div>
+                            <div class="row">
+                                <div class="item-label"><b>Item Price:</b></div>
+                                <div class="item-value2">{{toDelete.Price | currency}}</div>
+                            </div>
+                            <div class="row">
+                                <div class="item-label"><b>Description:</b></div>
+                                <div class="item-value3">{{toDelete.ItemDescription}}</div>
+                            </div>
+                            <div class="row">
+                                <div class="buttons">
+                                    <button class="btn btn-round btn-danger" (click)=confirmDelete()>Delete</button>&nbsp;&nbsp;
+                                    <button class="btn btn-round" (click)=cancelDelete()>cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer register-footer text-center">
+                            <h6>&copy;&nbsp;2020 made with <i class="fa fa-heart heart"></i> by Team 3</h6>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+    </div>
+</div>
+
+
+
+
+
+

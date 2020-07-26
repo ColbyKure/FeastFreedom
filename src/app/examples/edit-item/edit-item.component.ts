@@ -1,23 +1,35 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from '../../models/product';
+import { ApiserviceService } from '../../apiservice.service';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-createitem',
-  templateUrl: './createitem.component.html',
-  styleUrls: ['./createitem.component.css']
+  selector: 'app-edit-item',
+  templateUrl: './edit-item.component.html',
+  styleUrls: ['./edit-item.component.css']
 })
-export class CreateitemComponent implements OnInit {
-
+export class EditItemComponent implements OnInit {
   itemName:String;
   Price:Number;
   Description:String;
   ImgPath:String;
   Category:Number;
   selectedFile:File;
+  currItem:Product;
 
-  constructor() { }
+  constructor(
+    private kService:ApiserviceService,
+    private router:Router,
+  ) { }
 
   ngOnInit(): void {
-
+    this.currItem = JSON.parse(localStorage.getItem('currItem'));
+    console.log("loading from this item: " + this.currItem);
+    this.itemName = this.currItem.ItemName;
+    this.Price = this.currItem.Price;
+    this.Description = this.currItem.ItemDescription;
+    this.ImgPath = this.currItem.ImagePath;
+    this.Category = this.currItem.ItemCategory;
   }
   onFileChanged(event) {
     this.selectedFile = event.target.files[0]
@@ -46,4 +58,5 @@ export class CreateitemComponent implements OnInit {
   typeSelected(ItemType:Number) {
     this.Category = ItemType;
   }
+
 }

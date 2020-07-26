@@ -18,24 +18,28 @@ import { SignupuserComponent } from './examples/signupuser/signupuser.component'
 import { CreateitemComponent } from './examples/createitem/createitem.component';
 import { CartComponent } from './examples/cart/cart.component';
 import { ProductComponent } from './examples/product/product.component';
+import { DeleteItemComponent } from './examples/delete-item/delete-item.component';
+import { EditItemComponent } from './examples/edit-item/edit-item.component';
 
 const routes: Routes =[
     { path: '', redirectTo: 'homepage', pathMatch: 'full' },
-    { path: 'home',             component: ComponentsComponent },
-    { path: 'user-profile',     component: ProfileComponent },
-    { path: 'signup',           component: SignupComponent },
-    { path: 'landing',          component: LandingComponent },
-    { path: 'nucleoicons',      component: NucleoiconsComponent },
-    { path: 'about',      component: AboutComponent },
-    { path: 'login',      component: LoginComponent },
-    { path: 'homepage',      component: HomepageComponent },
-    { path: 'kitchens',      component: KitchensComponent },
-    { path: 'items',      component: ItemsComponent },
-    { path: 'signupkitchen',      component: SignupkitchenComponent },
-    { path: 'signupuser',      component: SignupuserComponent },
-    { path: 'products', component: ProductComponent },
-    { path: 'createitem',      component: CreateitemComponent },
-    { path: 'cart',      component: CartComponent }
+    { path: 'home',           component: ComponentsComponent },
+    { path: 'user-profile',   component: ProfileComponent },
+    { path: 'signup',         component: SignupComponent },
+    { path: 'landing',        component: LandingComponent },
+    { path: 'nucleoicons',    component: NucleoiconsComponent },
+    { path: 'about',          component: AboutComponent },
+    { path: 'login',          component: LoginComponent },
+    { path: 'homepage',       component: HomepageComponent },
+    { path: 'kitchens',       component: KitchensComponent },
+    { path: 'items',          component: ItemsComponent },
+    { path: 'signupkitchen',  component: SignupkitchenComponent },
+    { path: 'signupuser',     component: SignupuserComponent },
+    { path: 'products',       component: ProductComponent },
+    { path: 'createitem',     component: CreateitemComponent },
+    { path: 'cart',           component: CartComponent },
+    { path: 'deleteItem',     component: DeleteItemComponent },
+    { path: 'editItem',     component: EditItemComponent }
 ];
 
 @NgModule({

@@ -1,0 +1,41 @@
+.card-register {
+  background: rgba(209, 103, 71, 0.849);
+  width: 250%;
+  border-radius: 6px;
+  color: #fff;
+  max-width: 650px;
+  min-height: 400px;
+  z-index: 1;
+} 
+
+.delete-title {
+    font-size: 25px;
+    text-align: center;
+}
+
+.item-label {
+    font-size: 18px;
+    padding-left: 87px;
+
+}
+
+.item-value1 {
+    font-size: 16px;
+    margin-left: 30px;
+}
+
+.item-value2 {
+    font-size: 16px;
+    margin-left: 40px;
+}
+
+.item-value3 {
+    font-size: 16px;
+    margin-left: 28px;
+    max-width: 350px;
+}
+
+.buttons {
+    margin-top: 100px;
+    margin-left: 87px;
+}

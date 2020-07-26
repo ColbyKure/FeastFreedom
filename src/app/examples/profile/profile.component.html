@@ -9,21 +9,45 @@
                     <img src="./assets/img/faces/joe-gardner-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
                 </div>
                 <div class="name">
-                    <h4 class="title">Jane Faker<br /></h4>
-                    <h6 class="description" *ngIf="isKitchen()">Service Provider / Kitchen</h6>
-                    <h6 class="description" *ngIf="!isKitchen()">Regular User</h6>
+                    <h4 class="title">{{userName}}<br /></h4>
+                    <h6 class="description" *ngIf="isKitchen()">Kitchen Account</h6>
+                    <h6 class="description" *ngIf="!isKitchen()">User Account</h6>
                 </div>
             </div>
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-md-6 ml-auto mr-auto text-center">
                     <br />
                     <button class="btn btn-outline-default btn-round"><i class="fa fa-cog"></i> Settings</button>
                 </div>
-            </div>
+            </div> -->
             <br/>
             <div class="nav-tabs-navigation" *ngIf="!isKitchen()" >
                 <div class="nav-tabs-wrapper">
                     <ngb-tabset [justify]="'center'">
+                        <ngb-tab title="Account Settings">
+                            <ng-template ngbTabContent>
+                                <form style="align-content: center;">
+                                <h3 class="text-muted">{{userName}}</h3>
+                                <div class="col-md-3">  
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Name">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Default">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Default">
+                                    </div>
+                                </div>
+                                <br>
+                                <button class="btn btn-warning btn-round">Find Restaurants</button>
+                                </form>
+                            </ng-template>
+                        </ngb-tab>
                         <ngb-tab title="Favorite Restaurants">
                             <ng-template ngbTabContent >
                                 <div class="row following" id="follows">
@@ -69,6 +93,80 @@
                     </ngb-tabset>
                 </div>
             </div>
+            <br>
+            <div class="nav-tabs-navigation" *ngIf="isKitchen()" >
+                <div class="nav-tabs-wrapper">
+                    <ngb-tabset [justify]="'center'">
+                        <ngb-tab title="Account Settings">
+                            <ng-template ngbTabContent>
+                                <form>
+                                <h3 class="text-muted">Account Settings</h3>
+                                <div class="col-md-3">  
+                                    <div class="form-group" style="inline-size: 500px;">
+                                        <label>Kitchen Name:</label><input type="text" class="form-control" placeholder="Kitchen Name">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Default">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Default">
+                                    </div>
+                                </div>
+                                <br>
+                                <button class="btn btn-warning btn-round">Find Restaurants</button>
+                                </form>
+                            </ng-template>
+                        </ngb-tab>
+                        <ngb-tab title="Favorite Restaurants">
+                            <ng-template ngbTabContent >
+                                <div class="row following" id="follows">
+                                    <div class="col-md-6 ml-auto mr-auto">
+                                        <ul class="list-unstyled follows">
+                                            <li>
+                                                <div class="row">
+                                                    <div class="col-md-2 col-sm-2 ml-auto mr-auto">
+                                                        <img src="./assets/img/faces/wendys.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                                    </div>
+                                                    <div class="col-md-7 col-sm-4 ml-auto">
+                                                        <h6>Wendys<br/><small>Fast Food</small></h6>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-2 ml-auto mr-auto">
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <hr />
+                                            <li>
+                                                <div class="row">
+                                                    <div class="col-md-2 col-sm-2 ml-auto mr-auto">
+                                                        <img src="./assets/img/faces/mcdonald.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                                    </div>
+                                                    <div class="col-md-7 col-sm-4 ml-auto">
+                                                        <h6>Mcdonalds<br /><small>Fast Food</small></h6>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-2 ml-auto mr-auto">
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </ngb-tab>
+                        <ngb-tab title="Last Orders">
+                            <ng-template ngbTabContent>
+                                <h3 class="text-muted">Not ordes placed yet :(</h3>
+                                <br>
+                                <button class="btn btn-warning btn-round">Find Restaurants</button>
+                            </ng-template>
+                        </ngb-tab>
+                    </ngb-tabset>
+                </div>
+            </div>
+            
         </div>
     </div>
 </div>

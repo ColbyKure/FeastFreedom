@@ -18,37 +18,35 @@
                     <div class="col-lg-4 col-sm-6 mr-auto">
                       <div class="card card-register" >
                           <h3 class="title" style="font-size: xx-large; font-weight: 500; color: whitesmoke;">Security Questions</h3>
-                          <form class="register-form">
+                          <form class="register-form" #uForm="ngForm" (ngSubmit)="onSubmit(uForm)" novalidate>
                               <label>Security Question 1(Select from the Options)</label>
                               <br>
-                              <select name="select">
-                                  <option selected="selected">Question Set 1: Select one</option>
-                                  <option>Question 1?</option>
-                                  <option>Question 2?</option>
-                                  <option>Question 3?</option>
-                                  <option>Question 4?</option>
-                                  <option>Question 5? (Assume user selects this question in set 1)</option>
+                              <select name="formQue1" required="true" [(ngModel)]="formQue1">
+                                  <option value="1" selected="selected">What is the name of your first pet?</option>
+                                  <option value="2" >What is the name of the city you were born?></option>
+                                  <option value="3" >What is favorite childhood memory?</option>
+                                  <option value="4" >What is your mom's maiden name?</option>
+                                  <option value="5" >Who was your childhood hero?</option>
                                 </select>
                                 <br>
                                 <br>
-                                <input type="text" class="form-control" placeholder="Answer 1" (focus)="focus=true" (blur)="focus=false" id="email" required="true" >
+                                <input type="text" name="formAns1" required="true" [(ngModel)]="formAns1" class="form-control" placeholder="Answer 1" (focus)="focus=true" (blur)="focus=false" id="email" required="true" >
                                 <label>Security Question 2(Select from the Options)</label>
                                 <br>
-                                <select name="select">
-                                    <option selected="selected">Question Set 1: Select one</option>
-                                    <option>Question 6?</option>
-                                    <option>Question 7?</option>
-                                    <option>Question 8?</option>
-                                    <option>Question 9?</option>
-                                    <option>Question 10?</option>
+                                <select name="formQue2" required="true" [(ngModel)]="formQue2">
+                                    <option value="1" selected="selected">What was your fav toy as a kid?</option>
+                                    <option value="2" >What is the name of your first grade teacher?</option>
+                                    <option value="3">In what city or town did your mother and father meet?</option>
+                                    <option value="4" >What is the name of your favorite childhood friend?</option>
+                                    <option value="5" >What is your oldest sibling's middle name?</option>
                                   </select>
                                 <br>  
                                 <br>
-                                <input type="text" class="form-control" placeholder="Answer 1" (focus)="focus=true" (blur)="focus=false" id="" required="true" >
+                                <input type="text" name="formAns2" required="true" [(ngModel)]="formAns2" class="form-control" placeholder="Answer 1" (focus)="focus=true" (blur)="focus=false" id="" required="true" >
                                 <br>
                               
 
-                              <button class="btn btn-danger btn-block btn-round">Register Now</button>
+                              <button class="btn btn-danger btn-block btn-round" type="submit">Register Now</button>
                           </form>
                       </div>
                     </div>

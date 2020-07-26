@@ -1,0 +1,24 @@
+table {
+    width: 75%;
+}
+
+.item-images {
+
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+    border-radius: 15%;
+    margin: 5px; 
+}
+
+.item-name {
+    vertical-align: middle;
+    margin-left: 30px;
+    font-size: 22px;
+    padding: 15px;
+}
+
+.add-item {
+    margin-left: 12.5%;
+    margin-bottom: 7px;
+}

@@ -38,8 +38,8 @@ const routes: Routes =[
     { path: 'products',       component: ProductComponent },
     { path: 'createitem',     component: CreateitemComponent },
     { path: 'cart',           component: CartComponent },
-    { path: 'deleteItem',     component: DeleteItemComponent },
-    { path: 'editItem',     component: EditItemComponent }
+    { path: 'delete-item',    component: DeleteItemComponent },
+    { path: 'edit-item',       component: EditItemComponent }
 ];
 
 @NgModule({

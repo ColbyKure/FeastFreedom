@@ -1,42 +1,19 @@
-<style>
-    .cd-cart__footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    border-radius: 0 0 var(--radius) var(--radius);
-    box-shadow: 0 -2px 20px rgba(#000, .15);
-    background: var(--cd-color-3);
-  } 
-
-  .cd-cart__checkout {
-    display: block;
-    height: 72px;
-    line-height: 72px;
-    margin-right: 72px;
-    background: var(--cd-color-2);
-    color: alpha(var(--cd-color-3), 0);
-    text-align: center;
-    font-size: var(--text-md);
-    font-weight: 600;
-    transition: all .2s 0s;
-}
-</style>
-
 <div class="wrapper">
-    <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('assets/img/antoine-barres.jpg');">
-        <div class="filter"></div>
-        <div class="content-center">
-            <div class="container">
-                <div class="title-brand">
-                </div>
+
+<div class="page-header page-header-xs" data-parallax="true" style="background-image: url('assets/img/antoine-barres.jpg');">
+    <div class="filter"></div>
+    <div class="content-center">
+        <div class="container">
+            <div class="title-brand">
             </div>
-          </div> 
-      </div>
+        </div>
+    </div> 
+</div>
 
 <div class="section">
     <div class="container">
         <div class="tim-title">
-            <h2>Your Cart</h2>
+            <h2 style="text-align: center; margin-bottom: 100px;">Your Cart</h2>
         </div>
     </div> 
 </div>
@@ -50,32 +27,29 @@
         <th style = "text-align:center">Quantity</th>
         <th style = "text-align:center">Sub Total</th>
     </tr>
+    <br/>
     <tr *ngFor="let item of items">
         <td style = "text-align:center">
-            <a (click)="remove(item.product.id)">X</a>
+            <a (click)="remove(item.product._id)">Remove</a>
         </td>
         <td style = "text-align:center">
-            <img src={{item.product.Photo}} width ="150">
+            <img src={{item.product.ImagePath}} width ="150">
         </td>
-        <td style="font-weight:bold" style = "text-align:center">{{item.product.Name}}</td>
-        <td style = "text-align:center">${{item.product.Price}}</td>
-        <td style = "text-align:center">{{item.quantity}}</td>
-        <td style = "text-align:center">${{item.product.Price * item.quantity}}</td>
+        <td style="font-weight:bold" style = "text-align:center">{{item.product.ItemName}}</td>
+        <td style = "text-align:center; vertical-align: middle;">{{item.product.Price | currency}}</td>
+        <td style = "text-align:center; vertical-align: middle;">{{item.quantity}}</td>
+        <td style = "text-align:center; vertical-align: middle;">{{item.product.Price * item.quantity | currency}}</td>
     </tr>
     <tr>
         <td colspan="6"> Total</td>
-        <td>${{total}}</td>
+        <td>{{total | currency}}</td>
     </tr>
 </table>
 
 <div class="section">
-    <div class="container" style="text-align:right">
-    <a [routerLink]="['/products']" class="btn btn-default btn-round">Continue Shopping</a>
-    <a [routerLink]="['/checkout']" class="btn btn-default btn-round">Checkout</a>
+    <div class="container" style="text-align:right; margin-right: 140px;">
+        <a [routerLink]="['/checkout']" class="btn btn-default btn-round">Checkout</a>&nbsp;
+    <a [routerLink]="['/products']" class="btn btn-default btn-round">Back</a>
 </div>
+
 </div>
-
-
-
-	
-

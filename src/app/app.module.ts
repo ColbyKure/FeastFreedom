@@ -20,7 +20,6 @@ import { ProductService } from './services/product.service';
 import { DeleteItemComponent } from './examples/delete-item/delete-item.component';
 import { EditItemComponent } from './examples/edit-item/edit-item.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +28,7 @@ import { EditItemComponent } from './examples/edit-item/edit-item.component';
     CartComponent,
     ProductComponent,
     DeleteItemComponent,
-    EditItemComponent
+    EditItemComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +39,7 @@ import { EditItemComponent } from './examples/edit-item/edit-item.component';
     ComponentsModule,
     ExamplesModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [ CookieService, 
     ProductService ],

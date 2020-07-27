@@ -12,7 +12,8 @@ import { Kitchen } from '../../models/kitchen';
 export class ProductComponent implements OnInit {
 
 	private kitchen:Kitchen = new Kitchen();
-	private products: Product[] = [];
+	private products:Product[] = [];
+	private kitid:any;
 
 	currUserName:String = JSON.parse(localStorage.getItem('currUserName'));
   	constructor(
@@ -30,7 +31,7 @@ export class ProductComponent implements OnInit {
 		if (localStorage.getItem('errorLogin')){
 			this.router.navigate(['/login']);
 		}
-
+		this.kitid = JSON.parse(localStorage.getItem('kitchenid'));
 		let promise:any = this.kService.getKitchenByID(JSON.parse(localStorage.getItem('kitchenid'))).toPromise();
 		// let hard_coded = "5f1a6e60382ae46cec07d291";
 		// let promise:any = this.kService.getKitchenByID(hard_coded).toPromise();
@@ -61,14 +62,20 @@ export class ProductComponent implements OnInit {
 
 	addItem(){
 		console.log('you pressed addItem');
+		localStorage.setItem('kitchenid', JSON.stringify(this.kitid));
 		this.router.navigate(['/createitem']);
 	}
 	editItem(item:any){
 		localStorage.setItem('currItem', JSON.stringify(item));
-		this.router.navigate(['/editItem']);
+		this.router.navigate(['/edit-item']);
 	}
 	deleteItem(item:any){
 		localStorage.setItem('currItem', JSON.stringify(item));
-		this.router.navigate(['/deleteItem']);
+		this.router.navigate(['/delete-item']);
+	}
+
+	addToCart(item:any){
+		localStorage.setItem('currItem', JSON.stringify(item));
+		this.router.navigate(['/cart']);
 	}
 }

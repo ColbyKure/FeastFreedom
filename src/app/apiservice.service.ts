@@ -15,6 +15,20 @@ export class ApiserviceService {
 
   rootURL = 'http://localhost:2000/api';
 
+  // upload(file:any) {
+  //   return this.http.post<any[]>(this.rootURL + '/upload', file)
+  //   .pipe(catchError(this.errorHandler));
+  // }
+
+  // postFile(fileToUpload: File): Observable<boolean> {
+  //   const endpoint = 'src/assets';
+  //   const formData: FormData = new FormData();
+  //   formData.append('fileKey', fileToUpload, fileToUpload.name);
+  //   return this.http
+  //     .post<any>(endpoint, formData, { headers: null })
+  //     .pipe(catchError(this.errorHandler));
+  // }
+
   // userController functions
   getUser(): Observable<User[]> { 
     return this.http.get<User[]>(this.rootURL + '/users')
@@ -67,15 +81,15 @@ export class ApiserviceService {
     .pipe(catchError(this.errorHandler));
   }
   addProduct(item:any, kitchenid:String): Observable<Kitchen[]> {
-    return this.http.post<Kitchen[]>(this.rootURL + '/kitchens/'+ kitchenid, item)
+    return this.http.post<Kitchen[]>(this.rootURL + '/kitchens/addItem/'+ kitchenid, item)
     .pipe(catchError(this.errorHandler));
   }
   deleteProduct(itemid:String):Observable<Product[]> {
     return this.http.delete<Product[]>(this.rootURL + '/items/' + itemid)
     .pipe(catchError(this.errorHandler));
   }
-  getProductByID(itemid:String): Observable<Product[]> {
-    return this.http.get<Product[]>(this.rootURL + '/items/' + itemid)
+  getProductByID(itemid:String): Observable<Product> {
+    return this.http.get<Product>(this.rootURL + '/items/' + itemid)
     .pipe(catchError(this.errorHandler));
   }
   putProduct(item:any): Observable<Product[]> { 

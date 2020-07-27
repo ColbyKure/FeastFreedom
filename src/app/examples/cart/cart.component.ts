@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from '../../models/product';
 import { Item } from '../../models/item';
-import { ApiserviceService } from '../../apiservice.service';
+import { ProductService } from '../../services/product.service';
+import * as jspdf from 'jspdf';
+import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'app-cart',
@@ -22,6 +24,42 @@ export class CartComponent implements OnInit {
 	) { }
 
 	ngOnInit() {
+<<<<<<< HEAD
+		this.activatedRoute.params.subscribe(params => {
+			var id = params['_id'];
+			if (id) {
+				var item: Item = {
+					product: this.productService.find(id),
+					quantity: 1
+				};
+				if (localStorage.getItem('cart') == null) {
+					let cart: any = [];
+					cart.push(JSON.stringify(item));
+					localStorage.setItem('cart', JSON.stringify(cart));
+				} else {
+					let cart: any = JSON.parse(localStorage.getItem('cart'));
+					let index: number = -1;
+					for (var i = 0; i < cart.length; i++) {
+						let item: Item = JSON.parse(cart[i]);
+						if (item.product._id == id) {
+							index = i;
+							break;
+						}
+					}
+					if (index == -1) {
+						cart.push(JSON.stringify(item));
+						localStorage.setItem('cart', JSON.stringify(cart));
+					} else {
+						let item: Item = JSON.parse(cart[index]);
+						item.quantity += 1;
+						cart[index] = JSON.stringify(item);
+						localStorage.setItem("cart", JSON.stringify(cart));
+					}
+				}
+				this.loadCart();
+			} else {
+				this.loadCart();
+=======
 		let addedProd = JSON.parse(localStorage.getItem('currItem'))
 		console.log('found product: ' + JSON.stringify(addedProd))
 		if(!addedProd._id) {
@@ -39,6 +77,7 @@ export class CartComponent implements OnInit {
 			if(this.items[i].product._id == this.addedItem.product._id) {
 				this.items[i].quantity += 1
 				newItem = false;
+>>>>>>> ba7c65ed36d61fd726dd033dd7e30ddb95356779
 			}
 		}
 		console.log('found item: ' + JSON.stringify(this.addedItem))
@@ -70,5 +109,17 @@ export class CartComponent implements OnInit {
 		}
 		this.loadCart();
 	}
+
+	exportAsPDF(divId)
+    {
+        let data = document.getElementById('divId');  
+        html2canvas(data).then(canvas => {
+        const contentDataURL = canvas.toDataURL('image/png')  
+        let pdf = new jspdf('l', 'cm', 'a4'); //Generates PDF in landscape mode
+        // let pdf = new jspdf('p', 'cm', 'a4'); Generates PDF in portrait mode
+        pdf.addImage(contentDataURL, 'PNG', 0, 0, 29.7, 21.0);  
+        pdf.save('Receipt.pdf');
+      }); 
+    }
 }
 

@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+
+=======
+>>>>>>> ba7c65ed36d61fd726dd033dd7e30ddb95356779
 <div class="wrapper">
 
 <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('assets/img/antoine-barres.jpg');">
@@ -30,15 +34,25 @@
     <br/>
     <tr *ngFor="let item of items">
         <td style = "text-align:center">
+<<<<<<< HEAD
+            <a (click)="remove(item.product._id)">X</a>
+=======
             <a (click)="remove(item.product._id)">Remove</a>
+>>>>>>> ba7c65ed36d61fd726dd033dd7e30ddb95356779
         </td>
         <td style = "text-align:center">
             <img src={{item.product.ImagePath}} width ="150">
         </td>
         <td style="font-weight:bold" style = "text-align:center">{{item.product.ItemName}}</td>
+<<<<<<< HEAD
+        <td style = "text-align:center">${{item.product.Price}}</td>
+        <td style = "text-align:center">{{item.quantity}}</td>
+        <td style = "text-align:center">${{item.product.Price * item.quantity}}</td>
+=======
         <td style = "text-align:center; vertical-align: middle;">{{item.product.Price | currency}}</td>
         <td style = "text-align:center; vertical-align: middle;">{{item.quantity}}</td>
         <td style = "text-align:center; vertical-align: middle;">{{item.product.Price * item.quantity | currency}}</td>
+>>>>>>> ba7c65ed36d61fd726dd033dd7e30ddb95356779
     </tr>
     <tr>
         <td colspan="6"> Total</td>
@@ -52,4 +66,15 @@
     <a [routerLink]="['/products']" class="btn btn-default btn-round">Back</a>
 </div>
 
+<<<<<<< HEAD
+<div id="MyDIv" style="margin-left: 45px;" class="main-container">     
 </div>
+
+<div class="icon_image " title="Share As PDF" (click)="exportAsPDF('MyDIv');"><img src="assets/img/pdf.png">
+</div>
+
+	
+
+=======
+</div>
+>>>>>>> ba7c65ed36d61fd726dd033dd7e30ddb95356779

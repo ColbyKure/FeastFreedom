@@ -94,6 +94,7 @@ export class NavbarComponent implements OnInit {
         localStorage.removeItem('errorLogin');
         localStorage.removeItem('currItem')
         localStorage.removeItem('kitchenid')
+        localStorage.removeItem('errorLogin')
         localStorage.removeItem('cart')
         this.router.navigate(['/homepage']);
         location.reload();

@@ -17,6 +17,7 @@
     <div class="container" style="margin-bottom: 130px;">
         <h3 style="text-align: center;">Menu</h3> 
     </div>
+<<<<<<< HEAD
 
 <div class="container">
         <h3>Appetizers</h3>        
@@ -26,6 +27,9 @@
     <br/>     
     
     <div class="add-item">
+=======
+    <div class="add-item" *ngIf="isKitchen()">
+>>>>>>> ba7c65ed36d61fd726dd033dd7e30ddb95356779
         <button class="btn btn-default" (click)=addItem()>Add Item</button>
     </div>
     <table align = "center" class="table table-bordered" style="margin-bottom: 50px;">
@@ -37,7 +41,7 @@
             <td style = "text-align:center; vertical-align: middle;">{{product.Price | currency}} </td>
             <td style="width: 30%; vertical-align: middle; padding: 20px;">{{product.ItemDescription}} </td>
             <td style="text-align: center; vertical-align: middle;" *ngIf="isUser()">
-                <a [routerLink]="['/cart', { id:product._id }]" class="btn btn-default">Add to Cart</a>
+                <button class="btn btn-default" (click)=addToCart(product)>ADD To Cart</button>
             </td>
             <td style="text-align: center; vertical-align: middle;" *ngIf="isKitchen()">
                 <button class="btn btn-default" (click)=editItem(product)>Edit</button>&nbsp;

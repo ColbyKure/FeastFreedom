@@ -33,7 +33,7 @@
                 </li>
 
                 <li class="nav-item" *ngIf="isRegularUser()">
-                    <a [routerLink]="['/cart']" class="btn button">Cart  <i _ngcontent-ldk-c119="" class="nc-icon nc-cart-simple"></i></a>
+                    <a class="btn button btn-primary" (click)=onCart()>Cart  <i _ngcontent-ldk-c119="" class="nc-icon nc-cart-simple"></i></a>
                 </li>
 
                 <li class="nav-item" *ngIf="isLoggedIn()">

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../../models/product';
+import { HttpClient } from '@angular/common/http';
+import { Kitchen } from '../../models/kitchen';
 import { ApiserviceService } from '../../apiservice.service';
 import { Router } from '@angular/router';
+import { Product } from 'app/models/Product';
 
 @Component({
   selector: 'app-edit-item',
@@ -9,50 +11,54 @@ import { Router } from '@angular/router';
   styleUrls: ['./edit-item.component.css']
 })
 export class EditItemComponent implements OnInit {
-  itemName:String;
-  Price:Number;
-  Description:String;
-  ImgPath:String;
-  Category:Number;
-  selectedFile:File;
-  currItem:Product;
+
+  private name:String;
+  private Price:Number;
+  private Description:String;
+  private ImgPath:String;
+  private Category:Number;
+  private selectedFile:File;
+  private currItem:Product = new Product();
+  private kitid:any;
 
   constructor(
     private kService:ApiserviceService,
+    private http: HttpClient,
     private router:Router,
   ) { }
 
   ngOnInit(): void {
+    this.kitid = JSON.parse(localStorage.getItem('kitchenid'));
     this.currItem = JSON.parse(localStorage.getItem('currItem'));
     console.log("loading from this item: " + this.currItem);
-    this.itemName = this.currItem.ItemName;
+    this.name = this.currItem.ItemName;
     this.Price = this.currItem.Price;
     this.Description = this.currItem.ItemDescription;
     this.ImgPath = this.currItem.ImagePath;
     this.Category = this.currItem.ItemCategory;
   }
+  
   onFileChanged(event) {
-    this.selectedFile = event.target.files[0]
+    if(event.target.files[0] != null) {
+      this.selectedFile = event.target.files[0];
+    }
   }
 
-  onUpload() {
-    console.log(this.selectedFile)
-  }
-
-  onSubmit() {
-    console.log('submitted')
-    console.log('name,price,description,path,category,file')
-    console.log(this.itemName)
-    console.log(this.Price)
-    console.log(this.Description)
-    this.ImgPath = '/assets/img/' + this.selectedFile.name;
-    console.log(this.ImgPath)
-    console.log(this.Category)
-    console.log(this.selectedFile)
-  }
-
-  showFiles() {
-    console.log('inside show files')
+  onSubmit(uForm:any) {
+    this.currItem.ItemName = this.name;
+    this.currItem.Price = this.Price;
+    this.currItem.ItemDescription = this.Description;
+    this.currItem.ItemCategory = this.Category;
+    //this.currItem.ImagePath = this.ImgPath;
+    this.currItem.ImagePath = '/assets/img/upload.png'
+    let promise = this.kService.putProduct(this.currItem).toPromise();
+    promise.then((data) => {
+      console.log(data)
+    }).catch((error) => {
+      console.log(error);
+    });
+    this.router.navigate(['/products']);
+    location.reload();
   }
 
   typeSelected(ItemType:Number) {

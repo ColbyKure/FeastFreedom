@@ -19,7 +19,24 @@
                       <div class="card card-register" >
                           <h3 class="title" style="font-size: xx-large; font-weight: 500; color: whitesmoke;">Kitchen Info</h3>
                           <form class="register-form" #kForm="ngForm" (ngSubmit)="onSubmit(kForm)" novalidate>
-                              <label>Kitchen Type</label>
+                            <div ngbDropdown class="d-inline-block dropdown">
+                              <label id="dropdownBasic1" ngbDropdownToggle>Kitchen Type</label>
+                              <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="dropdown-primary">
+                                <a (click)="typeSelected(1)" class="dropdown-item"> Asian</a>
+                                <a (click)="typeSelected(2)" class="dropdown-item"> Burgers</a>
+                                <a (click)="typeSelected(3)" class="dropdown-item"> Cafe</a>
+                                <a (click)="typeSelected(4)" class="dropdown-item"> Fast Food</a>
+                                <a (click)="typeSelected(5)" class="dropdown-item"> Indian</a>
+                                <a (click)="typeSelected(6)" class="dropdown-item"> Italian</a>
+                                <a (click)="typeSelected(7)" class="dropdown-item"> Mexican</a>
+                                <a (click)="typeSelected(8)" class="dropdown-item"> Pizza</a>
+                                <a (click)="typeSelected(9)" class="dropdown-item"> Thai</a>
+                                  <!-- <a (click)="typeSelected(1)" class="dropdown-item">Vegetarian</a>
+                                  <a (click)="typeSelected(2)" class="dropdown-item">Non-Vegetarian</a> -->
+                              </div>
+                            </div>  
+                            
+                            <!-- <label>Kitchen Type</label>
                               <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
                                 <div class="input-group-prepend">
                                   <span class="input-group-text">
@@ -29,8 +46,8 @@
 
                                   <input type="text" class="form-control" placeholder="Kitchen Type" (focus)="focus=true" (blur)="focus=false" 
                                   name="formKtype" required="true" [(ngModel)]="formKtype" id="type">
-                              </div>
-
+                              </div> -->
+                              <br>
                               <label>Working Days</label>
                               <div class="form-check" id="days">
                                 <label class="form-check-label">

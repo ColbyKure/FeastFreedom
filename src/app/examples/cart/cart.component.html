@@ -27,6 +27,7 @@
         <th style = "text-align:center">Quantity</th>
         <th style = "text-align:center">Sub Total</th>
     </tr>
+    <br/>
     <tr *ngFor="let item of items">
         <td style = "text-align:center">
             <a (click)="remove(item.product._id)">Remove</a>
@@ -46,9 +47,9 @@
 </table>
 
 <div class="section">
-    <div class="container" style="text-align:right">
+    <div class="container" style="text-align:right; margin-right: 140px;">
+        <a [routerLink]="['/checkout']" class="btn btn-default btn-round">Checkout</a>&nbsp;
     <a [routerLink]="['/products']" class="btn btn-default btn-round">Back</a>
-    <a [routerLink]="['/checkout']" class="btn btn-default btn-round">Checkout</a>
 </div>
 
 </div>

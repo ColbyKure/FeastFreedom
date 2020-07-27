@@ -29,6 +29,9 @@ export class CartComponent implements OnInit {
 			return;
 		}
 		this.items = JSON.parse(localStorage.getItem('cart'));
+		if(!this.items){
+			this.items = [];
+		}
 		this.addedItem.product = addedProd;
 		this.addedItem.quantity = 1;
 		let newItem:Boolean = true;
@@ -37,9 +40,6 @@ export class CartComponent implements OnInit {
 				this.items[i].quantity += 1
 				newItem = false;
 			}
-		}
-		if(!this.items){
-			this.items = [];
 		}
 		console.log('found item: ' + JSON.stringify(this.addedItem))
 		if(newItem) {

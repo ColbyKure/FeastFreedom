@@ -15,7 +15,6 @@ export class ProductComponent implements OnInit {
 	private products:Product[] = [];
 	private kitid:any;
 
-	currUserName:String = JSON.parse(localStorage.getItem('currUserName'));
   	constructor(
     	private kService:ApiserviceService,
     	private router:Router,
@@ -31,6 +30,7 @@ export class ProductComponent implements OnInit {
 		if (localStorage.getItem('errorLogin')){
 			this.router.navigate(['/login']);
 		}
+
 		this.kitid = JSON.parse(localStorage.getItem('kitchenid'));
 		let promise:any = this.kService.getKitchenByID(JSON.parse(localStorage.getItem('kitchenid'))).toPromise();
 		// let hard_coded = "5f1a6e60382ae46cec07d291";

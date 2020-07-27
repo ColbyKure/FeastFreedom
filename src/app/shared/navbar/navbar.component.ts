@@ -16,11 +16,11 @@ export class NavbarComponent implements OnInit {
     private typeUser : boolean; // true = Regular User ; false =  Kitchen
     private userName : string;
 
-    constructor(public location: Location, private element : ElementRef, private router:Router) {
+    constructor(public location: Location, private element : ElementRef, private router:Router) { 
         this.sidebarVisible = false;
         this.loggedIn = false;
         if(localStorage.getItem('currUserID') != null){
-            this.userName = JSON.parse(localStorage.getItem('currUserName'));
+            this.userName = localStorage.getItem('currUserName');
             this.loggedIn =  true;
             if(localStorage.getItem('isKitchen') == "true"){
                 this.userName += " (kitchen)";

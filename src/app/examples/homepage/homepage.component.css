@@ -1,0 +1,51 @@
+.circular--landscape {
+    display: inline-block;
+    position: relative;
+    width: 210px;
+    height: 210px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 5px; 
+}
+.circular--landscape img {
+    width: auto;
+    height: 100%;
+    margin-left: -50px;
+}
+
+.circular--portrait {
+    position: relative; 
+    width: 210px;
+    height: 210px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 5px; 
+}
+.circular--portrait img {
+    width: 100%;
+    height: auto;
+}
+
+.circular--landscape p {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    font-size: 25px;
+    font-weight: bold;
+    color:rgb(8, 62, 87);
+    margin-bottom: 15px;
+}
+
+.circular--portrait p {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    font-size:25px;
+    font-weight: bold;
+    color:rgb(8, 62, 87);
+    margin-bottom: 15px;
+}

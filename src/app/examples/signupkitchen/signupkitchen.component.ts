@@ -20,7 +20,7 @@ export class SignupkitchenComponent implements OnInit {
   formCtime: String;
   formImage: String;
   errMsg:String;
-  kitchens: any;
+  kitchens:Kitchen = new Kitchen();
 
   email = JSON.parse(localStorage.getItem('currformEmail'));
   password = JSON.parse(localStorage.getItem('currformPassword'));
@@ -52,7 +52,8 @@ export class SignupkitchenComponent implements OnInit {
         this.kModel.WorkingDays = "Monday";
         this.kModel.OpenTime = this.formOtime;
         this.kModel.CloseTime = this.formCtime;
-        this.kModel.ImagePath = this.formImage;
+        //this.kModel.ImagePath = this.formImage;
+        this.kModel.ImagePath = '/assets/img/upload.png'
         this.removeKitchenLocalStorage();
         console.log(this.kModel.Email)
         console.log(this.kModel.Password)
@@ -66,7 +67,13 @@ export class SignupkitchenComponent implements OnInit {
         promise = this.kService.postKitchen(this.kModel).toPromise();
         promise.then((data) => {
           this.kitchens = data;
-          this.router.navigate(['/createitem'])
+          console.log('created kitchen: ' + this.kitchens)
+          localStorage.setItem('currUserName', JSON.stringify(this.kitchens.KitchenName));
+          localStorage.setItem('currUserID', JSON.stringify(this.kitchens._id));
+          localStorage.setItem('kitchenid', JSON.stringify(this.kitchens._id));
+          localStorage.setItem('isKitchen', 'true');
+          localStorage.removeItem('errorLogin');
+          this.router.navigate(['/login'])
         }).catch((error) => {
           console.log('This is the error')
           console.log(error)
@@ -78,7 +85,27 @@ export class SignupkitchenComponent implements OnInit {
         
     }
 
-    
+    typeSelected(x: number){
+      if(x == 1){
+          this.formKtype = "Asian";
+      }else if(x == 2){
+        this.formKtype = "Burgers";
+      }else if(x == 3){
+            this.formKtype = "Cafe";
+      }else if(x == 4){
+          this.formKtype = "Fast Food";
+      }else if(x == 5){
+          this.formKtype = "Indian";
+      }else if(x == 6){
+        this.formKtype = "Italian";
+      }else if(x == 7){
+        this.formKtype = "Mexican";
+      }else if(x == 8){
+        this.formKtype = "Pizza";
+      }else if(x == 9){
+        this.formKtype = "Thai";
+      }
+  }
 }
 
 

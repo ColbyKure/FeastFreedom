@@ -34,9 +34,9 @@ export class SignupuserComponent implements OnInit {
   }
 
    removeUserLocalStorage() {
-      localStorage.removeItem('currformEmail');
-     localStorage.removeItem('currformPassword');
-     localStorage.removeItem('currformFName');
+    localStorage.removeItem('currformEmail');
+    localStorage.removeItem('currformPassword');
+    localStorage.removeItem('currformFName');
    } 
 
   async onSubmit(uForm){
@@ -59,6 +59,10 @@ export class SignupuserComponent implements OnInit {
       promise = this.uService.postUser(this.uModel).toPromise();
       promise.then((data) => {
         this.users = data;
+        localStorage.setItem('currUserName', JSON.stringify(this.users.KitchenName));
+        localStorage.setItem('currUserID', JSON.stringify(this.users._id));
+        localStorage.setItem('isKitchen', 'false');
+        localStorage.removeItem('errorLogin');
         this.router.navigate(['/kitchens'])
       }).catch((error) => {
         console.log('This is the error')

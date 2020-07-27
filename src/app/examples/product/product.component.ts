@@ -35,7 +35,7 @@ export class ProductComponent implements OnInit {
 		// let hard_coded = "5f1a6e60382ae46cec07d291";
 		// let promise:any = this.kService.getKitchenByID(hard_coded).toPromise();
     	promise.then((data) => {
-			console.log(data);
+			//console.log(data);
 			this.products = data.items;
 			this.kitchen = data;
 		}).catch((error) => {

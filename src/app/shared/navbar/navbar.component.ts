@@ -91,7 +91,10 @@ export class NavbarComponent implements OnInit {
         localStorage.removeItem('currUserName');
         localStorage.removeItem('currUserID');
         localStorage.removeItem('isKitchen');
-        localStorage.removeItem('errorLogin')
+        localStorage.removeItem('errorLogin');
+        localStorage.removeItem('currItem')
+        localStorage.removeItem('kitchenid')
+        localStorage.removeItem('cart')
         this.router.navigate(['/homepage']);
         location.reload();
     }
@@ -102,5 +105,10 @@ export class NavbarComponent implements OnInit {
 
     userMyAccount() {
         this.router.navigate(['/user-profile']);
+    }
+
+    onCart(){
+        localStorage.setItem('currItem', null);
+        this.router.navigate(['/cart']);
     }
 }

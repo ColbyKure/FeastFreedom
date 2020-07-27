@@ -73,4 +73,9 @@ export class ProductComponent implements OnInit {
 		localStorage.setItem('currItem', JSON.stringify(item));
 		this.router.navigate(['/delete-item']);
 	}
+
+	addToCart(item:any){
+		localStorage.setItem('currItem', JSON.stringify(item));
+		this.router.navigate(['/cart']);
+	}
 }

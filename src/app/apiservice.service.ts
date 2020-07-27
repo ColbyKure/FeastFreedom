@@ -88,8 +88,8 @@ export class ApiserviceService {
     return this.http.delete<Product[]>(this.rootURL + '/items/' + itemid)
     .pipe(catchError(this.errorHandler));
   }
-  getProductByID(itemid:String): Observable<Product[]> {
-    return this.http.get<Product[]>(this.rootURL + '/items/' + itemid)
+  getProductByID(itemid:String): Observable<Product> {
+    return this.http.get<Product>(this.rootURL + '/items/' + itemid)
     .pipe(catchError(this.errorHandler));
   }
   putProduct(item:any): Observable<Product[]> { 

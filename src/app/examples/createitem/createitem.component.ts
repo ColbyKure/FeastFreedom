@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Kitchen } from '../../models/kitchen';
+import { ApiserviceService } from '../../apiservice.service';
+import { Router } from '@angular/router';
+import { Product } from 'app/models/Product';
 
 @Component({
   selector: 'app-createitem',
@@ -7,40 +12,47 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateitemComponent implements OnInit {
 
-  itemName:String;
-  Price:Number;
-  Description:String;
-  ImgPath:String;
-  Category:Number;
-  selectedFile:File;
+  private itemName:String = null;
+  private Price:Number = null;
+  private Description:String = null;
+  private ImgPath:String = null;
+  private Category:Number = null;
+  private selectedFile:File = null;
+  private item:Product = new Product();
+  private kitid:any;
 
-  constructor() { }
+  constructor(
+    private kService:ApiserviceService,
+    private http: HttpClient,
+    private router:Router,
+  ) { }
 
   ngOnInit(): void {
-
+    this.kitid = JSON.parse(localStorage.getItem('kitchenid'));
+    console.log()
   }
+  
   onFileChanged(event) {
-    this.selectedFile = event.target.files[0]
+    if(event.target.files[0] != null) {
+      this.selectedFile = event.target.files[0];
+    }
   }
 
-  onUpload() {
-    console.log(this.selectedFile)
-  }
-
-  onSubmit() {
-    console.log('submitted')
-    console.log('name,price,description,path,category,file')
-    console.log(this.itemName)
-    console.log(this.Price)
-    console.log(this.Description)
-    this.ImgPath = '/assets/img/' + this.selectedFile.name;
-    console.log(this.ImgPath)
-    console.log(this.Category)
-    console.log(this.selectedFile)
-  }
-
-  showFiles() {
-    console.log('inside show files')
+  onSubmit(uForm:any) {
+    this.item.ItemName = this.itemName;
+    this.item.Price = this.Price;
+    this.item.ItemDescription = this.Description;
+    this.item.ItemCategory = this.Category;
+    //this.item.ImagePath = this.ImgPath;
+    this.item.ImagePath = '/assets/img/upload.png'
+    let promise = this.kService.addProduct(this.item, this.kitid).toPromise();
+    promise.then((data) => {
+      console.log(data)
+    }).catch((error) => {
+      console.log(error);
+    });
+    this.router.navigate(['/products']);
+    location.reload();
   }
 
   typeSelected(ItemType:Number) {
